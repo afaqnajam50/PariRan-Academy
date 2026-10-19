@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pariran Academy | Kamran Akbar (P.H.D Scholar)</title>
+  <meta name="description" content="Official learning platform of Pariran Academy by Kamran Akbar (P.H.D Scholar). Interactive timed online tests, secure notes viewer, and biological sciences academy.">
+  <meta property="og:title" content="Pariran Academy | Kamran Akbar (P.H.D Scholar)">
+  <meta property="og:description" content="Interactive timed tests, secure online notes viewer, and biology curriculum.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Prevent printing of notes to enforce strict online viewing */
+    @media print {
+      body { display: none !important; }
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+<script src="/_aistudio-iframe.js?v=6634132a"></script></head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-emerald-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Top Academic Announcement Banner -->
+  <div class="bg-gradient-to-r from-emerald-900 via-teal-950 to-slate-950 text-white text-xs py-1.5 px-4 border-b border-emerald-800/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-0.5 rounded-full border border-emerald-400/30 text-[11px]">
+          <i class="fa-solid fa-graduation-cap"></i> BS Level & MDCAT
+        </span>
+        <span class="text-slate-300 hidden sm:inline">
+          Official Portal of <strong class="text-white">Kamran Akbar</strong> (P.H.D Scholar)
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3 text-[11px]">
+        <span class="hidden md:inline text-slate-400">Official Social Media:</span>
+        <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors font-semibold flex items-center gap-1">
+          <i class="fa-brands fa-youtube text-red-500 text-sm"></i> <span>YouTube</span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors font-semibold flex items-center gap-1">
+          <i class="fa-brands fa-tiktok text-sm"></i> <span>TikTok</span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors font-semibold flex items-center gap-1">
+          <i class="fa-brands fa-facebook text-blue-400 text-sm"></i> <span class="hidden sm:inline">Facebook</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18">
+        
+        <!-- Brand Logo -->
+        <a href="#hero" class="flex items-center gap-3 group text-left">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 text-white flex items-center justify-center shadow-md shadow-emerald-700/20 ring-2 ring-emerald-500/20 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-dna text-xl text-emerald-100"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xl font-extrabold tracking-tight text-slate-900 font-display">
+                PARIRAN <span class="text-emerald-700">ACADEMY</span>
+              </span>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
+                BS Bio
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 font-medium">
+              Director: Kamran Akbar <span class="text-emerald-700 font-semibold">(P.H.D Scholar)</span>
+            </p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1.5 lg:gap-3 text-sm font-semibold">
+          <a href="#hero" class="px-3 py-2 rounded-lg text-slate-700 hover:text-emerald-700 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-user-graduate text-slate-400"></i> <span>About Founder</span>
+          </a>
+          <a href="#notes-section" class="px-3 py-2 rounded-lg text-slate-700 hover:text-emerald-700 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-book-open text-slate-400"></i> <span>Online Notes</span>
+            <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded-full border border-amber-200">No Download</span>
+          </a>
+          <a href="#test-section" class="px-3 py-2 rounded-lg text-slate-700 hover:text-emerald-700 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-stopwatch text-slate-400"></i> <span>Timed Online Tests</span>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded-full">Live MCQ</span>
+          </a>
+        </nav>
+
+        <!-- Right Quick Actions -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-xs transition-all">
+            <i class="fa-brands fa-youtube"></i>
+            <span>Subscribe</span>
+          </a>
+          <button onclick="openAdminModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all cursor-pointer">
+            <i class="fa-solid fa-lock text-emerald-400 text-xs"></i>
+            <span>Admin Portal</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex md:hidden items-center gap-2">
+          <button onclick="openAdminModal()" class="p-2 rounded-lg bg-slate-900 text-white text-xs">
+            <i class="fa-solid fa-lock"></i>
+          </button>
+          <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <div class="space-y-1">
+        <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-100">
+          <i class="fa-solid fa-user-graduate mr-2 text-emerald-600"></i> About Founder
+        </a>
+        <a href="#notes-section" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-100">
+          <span><i class="fa-solid fa-book-open mr-2 text-emerald-600"></i> Online Notes</span>
+          <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">No Download</span>
+        </a>
+        <a href="#test-section" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-100">
+          <span><i class="fa-solid fa-stopwatch mr-2 text-emerald-600"></i> Timed Tests</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">Live MCQ</span>
+        </a>
+      </div>
+
+      <div class="pt-3 border-t border-slate-100 space-y-2">
+        <div class="grid grid-cols-2 gap-2">
+          <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-red-600 text-white font-bold text-xs">
+            <i class="fa-brands fa-youtube"></i> Subscribe YT
+          </a>
+          <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 text-white font-bold text-xs">
+            <i class="fa-brands fa-tiktok"></i> Follow TikTok
+          </a>
+        </div>
+        <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-700 text-white font-bold text-xs w-full">
+          <i class="fa-brands fa-facebook"></i> Facebook Biology Community
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+
+    <!-- HERO SECTION & PROFILE OWNER -->
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white pt-10 pb-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Profile Card Column -->
+          <div class="lg:col-span-5 flex flex-col items-center text-center lg:text-left lg:items-start">
+            <div class="relative w-full max-w-sm mx-auto lg:mx-0 rounded-2xl bg-slate-900 border border-slate-700 p-6 shadow-2xl">
+              
+              <!-- Avatar Frame -->
+              <div class="relative mb-4 flex justify-center">
+                <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-1 shadow-xl">
+                  <div class="w-full h-full rounded-full bg-slate-900 flex flex-col items-center justify-center text-emerald-400">
+                    <i class="fa-solid fa-user-graduate text-5xl mb-1 text-emerald-300"></i>
+                    <span class="text-[10px] font-mono tracking-widest uppercase font-bold text-emerald-400">P.H.D Scholar</span>
+                  </div>
+                </div>
+                <div class="absolute bottom-1 right-24 sm:right-28 bg-emerald-500 text-white rounded-full p-1.5 shadow-lg border-2 border-slate-900">
+                  <i class="fa-solid fa-circle-check text-base"></i>
+                </div>
+              </div>
+
+              <!-- Details -->
+              <h1 class="text-2xl sm:text-3xl font-extrabold text-white font-display text-center">
+                Kamran Akbar
+              </h1>
+              
+              <div class="mt-1 flex justify-center">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
+                  <i class="fa-solid fa-award text-emerald-400"></i>
+                  <span>P.H.D Scholar in Biological Sciences</span>
+                </span>
+              </div>
+
+              <p class="mt-3 text-xs text-slate-300 text-center leading-relaxed font-sans">
+                Director & Lead Mentor at <strong class="text-emerald-400">Pariran Academy</strong>. Dedicated to higher-tier conceptual training in BS Level Biology, Cytology, and Pre-Medical Competitions.
+              </p>
+
+              <!-- Social CTAs -->
+              <div class="w-full mt-5 pt-4 border-t border-slate-800 space-y-2.5">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center">
+                  Official Channels & Subscriptions
+                </div>
+
+                <!-- YouTube CTA Button -->
+                <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white text-xs font-bold shadow-md transition-all">
+                  <div class="flex items-center gap-2.5">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                    <div class="text-left">
+                      <div class="font-extrabold leading-tight">YouTube Channel</div>
+                      <div class="text-[10px] text-red-200">@PariRan0911</div>
+                    </div>
+                  </div>
+                  <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Subscribe</span>
+                </a>
+
+                <!-- TikTok CTA Button -->
+                <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-gradient-to-r from-zinc-950 to-slate-900 hover:from-zinc-900 hover:to-slate-800 text-white text-xs font-bold border border-slate-700 shadow-md transition-all">
+                  <div class="flex items-center gap-2.5">
+                    <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i>
+                    <div class="text-left">
+                      <div class="font-extrabold leading-tight">TikTok Official</div>
+                      <div class="text-[10px] text-slate-400">@mahparaalain09118</div>
+                    </div>
+                  </div>
+                  <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Follow</span>
+                </a>
+
+                <!-- Facebook CTA Button -->
+                <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-4 py-2 rounded-xl bg-blue-900/40 hover:bg-blue-900/60 text-blue-200 text-xs font-medium border border-blue-800/40 transition-colors">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-brands fa-facebook text-blue-400 text-base"></i>
+                    <span class="text-[11px] truncate">Academy of Biology BS Level</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs text-blue-400"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Academy Overview Column -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+              <i class="fa-solid fa-microscope"></i>
+              <span>Biological Sciences & University Academic Excellence</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-display leading-tight">
+              Master University Biology with <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Pariran Academy</span>
+            </h2>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Kamran Akbar is a distinguished P.H.D Scholar in Biological Sciences, author, and researcher with over a decade of teaching excellence. Pariran Academy was established to democratize high-level academic concepts through direct conceptual lectures, comprehensive notes, and rigorous timed assessments for BS Level, University, and Pre-Medical students.
+            </p>
+
+            <blockquote class="border-l-4 border-emerald-500 pl-4 py-2 text-slate-300 italic text-sm bg-slate-800/50 rounded-r-xl">
+              &ldquo;True scientific learning comes from conceptual understanding, consistent practice, and disciplined self-assessment.&rdquo;
+              <footer class="text-emerald-400 text-xs font-semibold not-italic mt-1">
+                — Kamran Akbar (P.H.D Scholar), Founder of Pariran Academy
+              </footer>
+            </blockquote>
+
+            <!-- Quick Action Hub Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <a href="#notes-section" class="p-5 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 transition-all shadow-lg block group">
+                <div class="flex items-start justify-between">
+                  <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase">
+                    Strict Online Read
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  Online Notes Viewer
+                </h3>
+                <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                  Read directly on the webpage. Protected curriculum notes for Cytology, Genetics, Plant Sciences, and Physiology.
+                </p>
+                <div class="mt-3 flex items-center text-xs font-bold text-emerald-400 gap-1">
+                  <span>Open Notes Reader</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </a>
+
+              <a href="#test-section" class="p-5 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-teal-500/50 transition-all shadow-lg block group">
+                <div class="flex items-start justify-between">
+                  <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
+                    <i class="fa-solid fa-stopwatch"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 uppercase">
+                    Timed Assessment
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">
+                  Interactive Online Tests
+                </h3>
+                <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                  10-minute countdown assessments, automatic submission, instant marks calculation, and detailed explanations.
+                </p>
+                <div class="mt-3 flex items-center text-xs font-bold text-teal-400 gap-1">
+                  <span>Take a Timed Test</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800">
+              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
+                <div class="text-2xl font-extrabold text-white font-display">15,000+</div>
+                <div class="text-[11px] text-slate-400 font-medium">Students Mentored</div>
+              </div>
+              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
+                <div class="text-2xl font-extrabold text-white font-display">120+</div>
+                <div class="text-[11px] text-slate-400 font-medium">Topic Notes</div>
+              </div>
+              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
+                <div class="text-2xl font-extrabold text-white font-display">50+</div>
+                <div class="text-[11px] text-slate-400 font-medium">Timed Test Sets</div>
+              </div>
+              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
+                <div class="text-2xl font-extrabold text-white font-display">98.4%</div>
+                <div class="text-[11px] text-slate-400 font-medium">Success Ratio</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ONLINE NOTES VIEWER (STRICT: NO DOWNLOAD OPTION) -->
+    <section id="notes-section" class="py-14 sm:py-20 bg-slate-100/70 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header & Strict Policy Notice -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-bold mb-2">
+              <i class="fa-solid fa-shield-halved text-amber-600"></i>
+              <span>STRICT: ONLINE VIEWER ONLY (NO DOWNLOAD OPTION)</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
+              Curriculum Notes & Lecture Transcripts
+            </h2>
+            <p class="text-sm text-slate-600 mt-1.5 max-w-2xl">
+              High-yield academic notes compiled by Kamran Akbar (P.H.D Scholar). Optimized for instant, distraction-free reading directly inside your browser.
+            </p>
+          </div>
+
+          <!-- Intellectual Property Banner -->
+          <div class="bg-amber-50 border border-amber-300 rounded-xl p-3 flex items-start gap-3 max-w-md shadow-xs">
+            <i class="fa-solid fa-circle-info text-amber-700 text-lg mt-0.5"></i>
+            <div class="text-xs text-amber-900 leading-snug">
+              <strong class="font-bold">Intellectual Property Notice:</strong>
+              PDF download and offline exporting are permanently disabled. Notes are for registered students to study directly on this webpage.
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="bg-white p-4 rounded-2xl shadow-xs border border-slate-200 mb-8 space-y-4">
+          <div class="flex flex-col md:flex-row gap-3">
+            <div class="relative flex-1">
+              <i class="fa-solid fa-magnifying-glass text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 text-sm"></i>
+              <input
+                id="notes-search-input"
+                type="text"
+                placeholder="Search topics, DNA replication, Fluid Mosaic, synapses..."
+                oninput="handleSearchNotes()"
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 text-sm bg-slate-50/50"
+              >
+            </div>
+
+            <div id="notes-categories" class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
+              <!-- Dynamically populated categories -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes Grid Container -->
+        <div id="notes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically populated via JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: INTERACTIVE TIMED ONLINE TEST SYSTEM -->
+    <section id="test-section" class="py-14 sm:py-20 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Test App Container -->
+        <div id="test-system-container">
+          <!-- Dynamically rendered: Catalog, Active Test, or Score Report -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 text-xs mt-auto">
+    <div class="border-b border-slate-900 bg-slate-900/60 py-8 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+            <i class="fa-solid fa-dna text-lg"></i>
+          </div>
+          <div>
+            <div class="text-white font-bold text-base font-display">Pariran Academy</div>
+            <div class="text-slate-400 text-xs">
+              Founded by Kamran Akbar <span class="text-emerald-400 font-semibold">(P.H.D Scholar)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-red-600/10 hover:bg-red-600/20 text-red-400 border border-red-500/20 font-semibold">
+            <i class="fa-brands fa-youtube text-base"></i> <span>YouTube @PariRan0911</span>
+          </a>
+          <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold">
+            <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i> <span>TikTok @mahparaalain09118</span>
+          </a>
+          <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/20 font-semibold">
+            <i class="fa-brands fa-facebook text-base"></i> <span>Facebook Community</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-2 space-y-3">
+          <div class="text-white font-bold text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-shield-halved text-emerald-400 mr-1.5"></i> Protected Online Learning
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-lg">
+            Pariran Academy is an academic institution dedicated to higher secondary and university-level biological sciences. Under the mentorship of Kamran Akbar (P.H.D Scholar), students access online notes, timed assessments, and video lectures.
+          </p>
+          <p class="text-[11px] text-amber-400">
+            Strict Note Policy: Direct on-screen browser study only. PDF downloads are permanently disabled.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-white font-bold text-xs tracking-wider uppercase mb-2">Navigation</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#hero" class="hover:text-emerald-400">About Founder</a></li>
+            <li><a href="#notes-section" class="hover:text-emerald-400">Online Notes (Read Only)</a></li>
+            <li><a href="#test-section" class="hover:text-emerald-400">Timed Online Tests</a></li>
+            <li><button onclick="openAdminModal()" class="hover:text-emerald-400 underline">Admin Portal</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold text-xs tracking-wider uppercase mb-2">Curricula</div>
+          <ul class="space-y-1.5 text-slate-400 text-xs">
+            <li>• BS Level Cell Biology & Cytology</li>
+            <li>• Molecular Genetics & Enzymology</li>
+            <li>• Human Physiology & Neurobiology</li>
+            <li>• Plant Sciences & Photosynthesis</li>
+            <li>• MDCAT Biology Rapid Prep</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>
+          &copy; <span id="current-year"></span> Pariran Academy. All Rights Reserved. Director: Kamran Akbar (P.H.D Scholar).
+        </div>
+        <div class="flex items-center gap-3">
+          <span>Online Biological Education</span>
+          <button onclick="openAdminModal()" class="hover:text-slate-300 underline">Admin Portal</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DEDICATED FULLSCREEN ONLINE NOTES READER MODAL -->
+  <div id="notes-reader-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-2 sm:p-4 md:p-6 overflow-y-auto">
+    <div id="notes-reader-card" class="w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl shadow-2xl border border-slate-200 bg-white text-slate-800 overflow-hidden">
+      
+      <!-- Toolbar -->
+      <div id="reader-toolbar" class="px-4 sm:px-6 py-3.5 border-b border-slate-200 bg-slate-50 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span id="reader-category-badge" class="text-xs font-bold uppercase tracking-wider text-emerald-700"></span>
+          <span class="text-slate-400">•</span>
+          <span id="reader-time-badge" class="text-xs text-slate-500 font-medium"></span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- Font size toggles -->
+          <div class="flex items-center rounded-lg border border-slate-300 p-0.5 text-xs font-bold">
+            <button onclick="setReaderFontSize('sm')" id="btn-font-sm" class="px-2 py-0.5 rounded">A-</button>
+            <button onclick="setReaderFontSize('base')" id="btn-font-base" class="px-2 py-0.5 rounded bg-emerald-600 text-white">A</button>
+            <button onclick="setReaderFontSize('lg')" id="btn-font-lg" class="px-2 py-0.5 rounded">A+</button>
+          </div>
+
+          <!-- Color theme toggles -->
+          <div class="flex items-center gap-1.5">
+            <button onclick="setReaderTheme('light')" class="w-5 h-5 rounded-full border border-slate-300 bg-white ring-1 ring-slate-400" title="Light theme"></button>
+            <button onclick="setReaderTheme('sepia')" class="w-5 h-5 rounded-full border border-[#ebdccb] bg-[#fcf8f2]" title="Warm Sepia theme"></button>
+            <button onclick="setReaderTheme('dark')" class="w-5 h-5 rounded-full border border-slate-700 bg-slate-900" title="Dark theme"></button>
+          </div>
+
+          <!-- Close button -->
+          <button onclick="closeNotesReader()" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Reader Body -->
+      <div id="reader-body" class="p-6 sm:p-10 overflow-y-auto space-y-8 select-text text-base leading-relaxed">
+        <!-- Dynamically injected note content -->
+      </div>
+
+      <!-- Bottom bar -->
+      <div id="reader-footer" class="px-6 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+        <span class="text-xs text-slate-500">Pariran Academy • Strict Online Reader Only</span>
+        <button onclick="closeNotesReader()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+          Close Reader
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECURE ADMIN PANEL MODAL (TEST & NOTES UPLOAD) -->
+  <div id="admin-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      
+      <!-- Admin Top Header -->
+      <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold font-display">Pariran Academy Administration Console</h3>
+            <p class="text-[11px] text-slate-400">Kamran Akbar (P.H.D Scholar) • Secure Management</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span>
+          </button>
+          <button onclick="closeAdminModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Body Container (Auth Screen vs Management Workspace) -->
+      <div id="admin-modal-body" class="flex-1 overflow-hidden flex flex-col">
+        <!-- Dynamically rendered -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & APPLICATION ENGINE -->
+  <script>
+    // -------------------------------------------------------------
+    // DATA LAYER & DEFAULT SAMPLE DATA
+    // -------------------------------------------------------------
+    const DEFAULT_NOTES = [
+      {
+        id: 'note-1',
+        title: 'Ultra-Structure and Functions of Cell Membrane (Fluid Mosaic Model)',
+        category: 'Cell Biology',
+        topic: 'Membrane Transport & Biophysics (BS Level)',
+        readTime: '7 min read',
+        overview: 'A deep examination of the Singer-Nicolson Fluid Mosaic model, lipid bilayer dynamics, integral and peripheral proteins, and active vs passive transport mechanisms across biological membranes.',
+        sections: [
+          {
+            heading: '1. The Singer-Nicolson Model Overview',
+            body: 'Proposed in 1972 by S.J. Singer and Garth L. Nicolson, this model describes biological membranes as quasi-fluid 2D liquids in which lipids and proteins diffuse laterally. The phospholipid matrix is amphipathic, forming a thermodynamically stable hydrophobic core shielded by hydrophilic phosphate head groups.',
+            points: [
+              'Phospholipids possess hydrophilic glycerol-phosphate heads and hydrophobic fatty acid tails (saturated vs unsaturated).',
+              'Membrane fluidity is dynamically buffered by cholesterol in animal cells and phytosterols in plants.',
+              'Fluidity decreases with low temperatures and high saturation of fatty acid chains.'
+            ]
+          },
+          {
+            heading: '2. Membrane Proteins & Their Topologies',
+            body: 'Membrane proteins constitute 40–60% of membrane mass and carry out active physiological duties including ion channels, signal transducers, enzymatic catalysis, and cell-to-cell adhesion.',
+            points: [
+              'Integral (Transmembrane) Proteins: Span the hydrophobic core via alpha-helices (e.g. Glycophorin, GPCRs).',
+              'Peripheral Proteins: Bound electrostatically to lipid heads or integral proteins (e.g. Spectrin, Cytochrome c).',
+              'Lipid-anchored Proteins: Covalently tethered to fatty acids or glycosylphosphatidylinositol (GPI) anchors.'
+            ]
+          },
+          {
+            heading: '3. Solute Transport Mechanisms',
+            body: 'Transport occurs via passive diffusion, facilitated diffusion (uniporters, symporters, antiporters), and primary/secondary active transport fueled by ATP hydrolysis or electrochemical gradients.',
+            points: [
+              'Primary Active Transport: Hydrolyzes ATP directly (e.g. Na+/K+-ATPase pump maintaining resting potential).',
+              'Secondary Active Transport: Uses cotransport gradient created by primary pump (e.g., SGLT1 glucose symporter).',
+              'Aquaporins: High-efficiency water channels facilitating rapid osmotic equilibration.'
+            ]
+          }
+        ],
+        keyTakeaways: [
+          'Membrane fluidity is strictly regulated by temperature, lipid saturation, and sterol concentrations.',
+          'Transmembrane domains frequently comprise 20–25 hydrophobic amino acids arranged in alpha-helices.',
+          'Na+/K+ ATPase is electrogenic, generating net negative charge inside the cell.'
+        ]
+      },
+      {
+        id: 'note-2',
+        title: 'DNA Replication, Fork Enzymology & Proofreading in Eukaryotes',
+        category: 'Molecular Genetics',
+        topic: 'Chromosomal Biology & Replication (BS Level)',
+        readTime: '9 min read',
+        overview: 'Comprehensive conceptual notes on the eukaryotic replication fork, origin recognition complexes, DNA polymerases (alpha, delta, epsilon), and high-fidelity proofreading.',
+        sections: [
+          {
+            heading: '1. Origin of Replication & Pre-Replication Complex (pre-RC)',
+            body: 'Unlike prokaryotes with a single OriC, eukaryotic chromosomes feature multiple replication origins to replicate massive linear genomes within S-phase. The Origin Recognition Complex (ORC 1–6) recruits Cdc6 and Cdt1 to load the replicative helicase MCM2-7.',
+            points: [
+              'ORC binds replication origins in G1 phase under control of CDK activity.',
+              'MCM2-7 hexamer unwinds double-stranded DNA in a 3\' to 5\' direction on the leading strand template.',
+              'Replication occurs bi-directionally forming two diverging replication forks.'
+            ]
+          },
+          {
+            heading: '2. The Replicative Polymerases & Division of Labor',
+            body: 'Eukaryotic cells employ distinct polymerases for initiation and elongation. Polymerase alpha synthesizes the RNA/DNA primer, Polymerase epsilon drives continuous leading-strand synthesis, and Polymerase delta executes discontinuous lagging-strand synthesis of Okazaki fragments.',
+            points: [
+              'Pol alpha / Primase: Synthesizes ~10 nt RNA primer followed by ~20 nt initiator DNA.',
+              'PCNA (Proliferating Cell Nuclear Antigen): Sliding clamp dramatically enhancing processivity.',
+              'RFC (Replication Factor C): ATP-dependent clamp loader assembling PCNA onto DNA.'
+            ]
+          },
+          {
+            heading: '3. Okazaki Fragment Maturation & Telomere Resolution',
+            body: 'Lagging strand synthesis produces Okazaki fragments (~100-200 nt long). RNA primers are displaced by Pol delta and cleaved by FEN1 (Flap Endonuclease 1), with nicks sealed by DNA Ligase I.',
+            points: [
+              'Proofreading occurs via intrinsic 3\' to 5\' exonuclease activity, reducing errors to 1 in 10^7 nucleotides.',
+              'Post-replicative mismatch repair (MMR) further enhances fidelity by an additional 100-fold.'
+            ]
+          }
+        ],
+        keyTakeaways: [
+          'Leading strand is elongated continuously by Pol epsilon; lagging strand is synthesized discontinuously by Pol delta.',
+          'FEN1 flap endonuclease removes the displaced 5\' RNA-DNA flap during lagging strand synthesis.',
+          'Telomerase prevents terminal genetic degradation using its intrinsic RNA template.'
+        ]
+      },
+      {
+        id: 'note-3',
+        title: 'Action Potential Generation & Synaptic Neurotransmission',
+        category: 'Human Physiology',
+        topic: 'Neurophysiology & Excitable Membranes (BS Level)',
+        readTime: '8 min read',
+        overview: 'Principles of neuronal resting membrane potential (-70 mV), voltage-gated ion channels, action potential phases, and chemical synapse vesicle fusion.',
+        sections: [
+          {
+            heading: '1. Genesis of Resting Membrane Potential (RMP)',
+            body: 'The resting membrane potential of neurons typically hovers between -60 mV and -70 mV. It is predominantly established by the high permeability of resting K+ leak channels and maintained continuously by the electrogenic Na+/K+ pump.',
+            points: [
+              'Nernst Equation calculates equilibrium potential for individual ions (E_K ≈ -90 mV, E_Na ≈ +60 mV).',
+              'Goldman-Hodgkin-Katz (GHK) equation accounts for simultaneous permeability of K+, Na+, and Cl-.'
+            ]
+          },
+          {
+            heading: '2. Phases of the Action Potential',
+            body: 'An action potential is an all-or-none electrical impulse triggered when membrane depolarization surpasses threshold voltage (~ -55 mV).',
+            points: [
+              'Depolarization: Voltage-gated Na+ channels (Nav) open rapidly, permitting massive Na+ influx toward +30 mV.',
+              'Inactivation: Nav inactivation gates (ball-and-chain) close within 1 millisecond.',
+              'Repolarization: Delayed rectifier voltage-gated K+ channels (Kv) open, releasing K+ out of the axoplasm.',
+              'Hyperpolarization: Prolonged K+ channel closure causes the potential to dip below resting potential (-80 mV).'
+            ]
+          }
+        ],
+        keyTakeaways: [
+          'Threshold (-55 mV) represents the voltage where inward Na+ current exceeds outward K+ current.',
+          'SNARE proteins and calcium sensor synaptotagmin govern vesicular exocytosis.'
+        ]
+      }
+    ];
+
+    const DEFAULT_TESTS = [
+      {
+        id: 'test-1',
+        title: 'BS Level Biology Grand Comprehensive Assessment',
+        category: 'Biological Sciences',
+        description: 'Timed assessment covering Cell Biology, Bioenergetics, Genetics, and Animal Physiology designed by Kamran Akbar (P.H.D Scholar).',
+        timeLimitMinutes: 10,
+        questions: [
+          {
+            id: 'q1-1',
+            question: 'Which of the following cellular components is directly responsible for synthesizing ribosomal RNA (rRNA) in eukaryotic cells?',
+            options: ['Golgi Apparatus', 'Nucleolus', 'Endoplasmic Reticulum', 'Peroxisome'],
+            correctAnswer: 1,
+            explanation: 'The nucleolus is the specialized nuclear substructure where RNA Polymerase I transcribes precursor rRNA, followed by assembly into ribosomal subunits.'
+          },
+          {
+            id: 'q1-2',
+            question: 'In the eukaryotic cell cycle, the restriction point (R-point) committing the cell to DNA synthesis resides in which phase?',
+            options: ['G1 Phase', 'S Phase', 'G2 Phase', 'Metaphase of Mitosis'],
+            correctAnswer: 0,
+            explanation: 'The restriction point occurs in late G1 phase. Once crossed via phosphorylation of pRb by Cyclin D/CDK4-6, the cell irreversibly commits to entering S phase.'
+          },
+          {
+            id: 'q1-3',
+            question: 'During cellular respiration, the terminal electron acceptor in the mitochondrial electron transport chain is:',
+            options: ['NAD+', 'FAD', 'Molecular Oxygen (O2)', 'Cytochrome c'],
+            correctAnswer: 2,
+            explanation: 'Molecular oxygen (O2) acts as the final electron acceptor at Cytochrome c Oxidase (Complex IV), combining with protons to form metabolic water (H2O).'
+          },
+          {
+            id: 'q1-4',
+            question: 'What is the primary physiological function of the Na+/K+-ATPase pump in animal cell membranes?',
+            options: [
+              'Pumping 3 Na+ ions in and 2 K+ ions out',
+              'Pumping 3 Na+ ions out and 2 K+ ions in with ATP consumption',
+              'Transporting glucose passively into the cytoplasm',
+              'Regulating calcium storage inside the sarcoplasmic reticulum'
+            ],
+            correctAnswer: 1,
+            explanation: 'The Na+/K+-ATPase hydrolyzes ATP to actively pump 3 Na+ OUT and 2 K+ INTO the cell against gradients, establishing membrane potential.'
+          },
+          {
+            id: 'q1-5',
+            question: 'Which enzyme synthesizes short RNA primers necessary for lagging strand DNA replication in eukaryotes?',
+            options: ['DNA Polymerase I', 'DNA Polymerase alpha / Primase', 'RNA Polymerase II', 'Topoisomerase II'],
+            correctAnswer: 1,
+            explanation: 'In eukaryotes, the DNA Polymerase alpha/primase complex synthesizes ~10 nt RNA primer followed by ~20 nt initiator DNA.'
+          },
+          {
+            id: 'q1-6',
+            question: 'The Oxygen-Evolving Complex (OEC) of Photosystem II contains a catalytic cluster composed of:',
+            options: ['Iron and Copper (Fe4Cu)', 'Manganese and Calcium (Mn4CaO5)', 'Zinc and Magnesium (Zn2Mg)', 'Cobalt and Nickel (Co2Ni)'],
+            correctAnswer: 1,
+            explanation: 'The Oxygen-Evolving Complex in Photosystem II contains an asymmetric cuboidal Mn4CaO5 cluster that coordinates water oxidation.'
+          },
+          {
+            id: 'q1-7',
+            question: 'Which of the following hormones is classified as a peptide hormone acting primarily via cell-surface G-protein coupled receptors?',
+            options: ['Cortisol', 'Thyroxine (T4)', 'Glucagon', 'Estrogen'],
+            correctAnswer: 2,
+            explanation: 'Glucagon is a 29-amino acid peptide hormone that binds to GPCRs on hepatocytes, activating adenylate cyclase to increase intracellular cAMP.'
+          },
+          {
+            id: 'q1-8',
+            question: 'During muscle contraction, calcium ions bind to which specific regulatory protein to expose myosin-binding sites on actin?',
+            options: ['Tropomyosin', 'Troponin C', 'Myosin light chain', 'Dystrophin'],
+            correctAnswer: 1,
+            explanation: 'Calcium binds to Troponin C, inducing a conformational change that pulls Tropomyosin away from active sites on actin filaments.'
+          },
+          {
+            id: 'q1-9',
+            question: 'A point mutation converting a codon for an amino acid into a premature stop codon is termed a:',
+            options: ['Silent mutation', 'Missense mutation', 'Nonsense mutation', 'Frameshift mutation'],
+            correctAnswer: 2,
+            explanation: 'A nonsense mutation changes a sense codon to a stop codon (UAA, UAG, UGA), terminating translation prematurely.'
+          },
+          {
+            id: 'q1-10',
+            question: 'In Hardy-Weinberg equilibrium, if recessive allele frequency (q) is 0.3, what is heterozygous carrier frequency (2pq)?',
+            options: ['0.09', '0.21', '0.42', '0.70'],
+            correctAnswer: 2,
+            explanation: 'If q = 0.3, then dominant p = 0.7. Heterozygous genotype frequency 2pq = 2 * (0.7) * (0.3) = 0.42 (42%).'
+          }
+        ]
+      },
+      {
+        id: 'test-2',
+        title: 'Cell Biology & Cytology Special Test',
+        category: 'Cell Biology',
+        description: 'Organelles, cytoskeletal dynamics, cell junctions, and membrane biophysics.',
+        timeLimitMinutes: 8,
+        questions: [
+          {
+            id: 'q2-1',
+            question: 'Which cellular organelle is the primary site for post-translational protein glycosylation and sorting?',
+            options: ['Lysosome', 'Golgi Apparatus', 'Peroxisome', 'Centrosome'],
+            correctAnswer: 1,
+            explanation: 'The Golgi apparatus modifies proteins arriving from the rough ER through sequential glycosylation and sorting.'
+          },
+          {
+            id: 'q2-2',
+            question: 'Which intercellular junction facilitates direct metabolic and electrical communication between neighboring animal cells?',
+            options: ['Tight junctions', 'Desmosomes', 'Gap junctions', 'Hemidesmosomes'],
+            correctAnswer: 2,
+            explanation: 'Gap junctions are formed by hexameric connexons that allow passage of ions and small signaling molecules.'
+          },
+          {
+            id: 'q2-3',
+            question: 'The enzyme catalase, which decomposes toxic hydrogen peroxide (H2O2) into water and oxygen, is concentrated in:',
+            options: ['Mitochondria', 'Lysosome', 'Peroxisome', 'Nucleus'],
+            correctAnswer: 2,
+            explanation: 'Peroxisomes contain high concentrations of catalase to detoxify reactive hydrogen peroxide.'
+          }
+        ]
+      }
+    ];
+
+    // Initialize state from localStorage or defaults
+    function getStoredNotes() {
+      try {
+        const saved = localStorage.getItem('pariran_notes');
+        if (saved) return JSON.parse(saved);
+      } catch (e) {}
+      return DEFAULT_NOTES;
+    }
+
+    function saveNotes(notes) {
+      localStorage.setItem('pariran_notes', JSON.stringify(notes));
+    }
+
+    function getStoredTests() {
+      try {
+        const saved = localStorage.getItem('pariran_tests');
+        if (saved) return JSON.parse(saved);
+      } catch (e) {}
+      return DEFAULT_TESTS;
+    }
+
+    function saveTests(tests) {
+      localStorage.setItem('pariran_tests', JSON.stringify(tests));
+    }
+
+    let allNotes = getStoredNotes();
+    let allTests = getStoredTests();
+    let selectedCategory = 'All';
+
+    // -------------------------------------------------------------
+    // AUDIO SYNTHESIZER (Pure Web Audio API, Zero External Files)
+    // -------------------------------------------------------------
+    function playAudioTone(type) {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        if (type === 'beep') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(800, ctx.currentTime);
+          gain.gain.setValueAtTime(0.1, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.start(); osc.stop(ctx.currentTime + 0.1);
+        } else if (type === 'warning') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(450, ctx.currentTime);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.start(); osc.stop(ctx.currentTime + 0.25);
+        } else if (type === 'success') {
+          [523.25, 659.25, 783.99].forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.08);
+            gain.gain.setValueAtTime(0.12, ctx.currentTime + idx * 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.08 + 0.25);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(ctx.currentTime + idx * 0.08);
+            osc.stop(ctx.currentTime + idx * 0.08 + 0.25);
+          });
+        }
+      } catch (e) {}
+    }
+
+    // -------------------------------------------------------------
+    // NAVIGATION & MOBILE MENU
+    // -------------------------------------------------------------
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // NOTES SECTION (STRICT: NO DOWNLOAD OPTION)
+    // -------------------------------------------------------------
+    function renderNotesCategories() {
+      const container = document.getElementById('notes-categories');
+      const cats = ['All', ...new Set(allNotes.map(n => n.category))];
+      container.innerHTML = cats.map(cat => `
+        <button onclick="filterNotesCategory('${cat}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+          selectedCategory === cat ? 'bg-emerald-700 text-white shadow-xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+        }">${cat}</button>
+      `).join('');
+    }
+
+    function filterNotesCategory(cat) {
+      selectedCategory = cat;
+      renderNotesCategories();
+      renderNotesGrid();
+    }
+
+    function handleSearchNotes() {
+      renderNotesGrid();
+    }
+
+    function renderNotesGrid() {
+      const container = document.getElementById('notes-grid');
+      const searchVal = (document.getElementById('notes-search-input')?.value || '').toLowerCase().trim();
+
+      const filtered = allNotes.filter(n => {
+        const matchesCategory = selectedCategory === 'All' || n.category === selectedCategory;
+        const matchesSearch = !searchVal || 
+          n.title.toLowerCase().includes(searchVal) || 
+          n.topic.toLowerCase().includes(searchVal) ||
+          n.overview.toLowerCase().includes(searchVal);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full bg-white rounded-2xl p-10 text-center border border-slate-200">
+            <i class="fa-solid fa-book-open text-4xl text-slate-300 mb-2"></i>
+            <h4 class="text-base font-bold text-slate-800">No notes found</h4>
+            <p class="text-xs text-slate-500 mt-1">Try resetting your search query.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(note => `
+        <article class="bg-white rounded-2xl border border-slate-200 hover:border-emerald-500/60 shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group">
+          <div class="p-6">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                ${note.category}
+              </span>
+              <span class="text-xs text-slate-400 font-medium">
+                ${note.readTime}
+              </span>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors line-clamp-2">
+              ${note.title}
+            </h3>
+
+            <p class="text-xs font-semibold text-emerald-600 mt-1">
+              ${note.topic}
+            </p>
+
+            <p class="text-xs text-slate-600 mt-3 line-clamp-3 leading-relaxed">
+              ${note.overview}
+            </p>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+              ${note.sections.slice(0, 2).map(s => `
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium truncate max-w-[200px]">
+                  ${s.heading.replace(/^\\d+\\.\\s*/, '')}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Bottom Action: Strictly Web Reading, Zero Download -->
+          <div class="px-6 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+              <i class="fa-solid fa-lock text-slate-400 text-xs"></i>
+              <span>Direct Web Reader</span>
+            </div>
+            <button onclick="openNotesReader('${note.id}')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-xs transition-all cursor-pointer">
+              <i class="fa-solid fa-eye"></i>
+              <span>Read Online</span>
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // -------------------------------------------------------------
+    // DEDICATED ONLINE NOTES READER MODAL
+    // -------------------------------------------------------------
+    let currentReaderNote = null;
+    let readerFontSize = 'base';
+    let readerTheme = 'light';
+
+    function openNotesReader(noteId) {
+      const note = allNotes.find(n => n.id === noteId);
+      if (!note) return;
+      currentReaderNote = note;
+
+      document.getElementById('reader-category-badge').innerText = note.category;
+      document.getElementById('reader-time-badge').innerText = note.readTime;
+
+      const bodyEl = document.getElementById('reader-body');
+      bodyEl.innerHTML = `
+        <div class="border-b pb-6 border-slate-200">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+              Pariran Academy Official Notes
+            </span>
+            <span class="text-xs text-slate-400">Online View Protected</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight font-display mb-2 text-slate-900">
+            ${note.title}
+          </h1>
+          <p class="text-sm font-semibold text-emerald-600">
+            Topic: ${note.topic}
+          </p>
+          <p class="mt-3 text-sm italic opacity-85 leading-relaxed bg-black/5 p-3 rounded-xl">
+            &ldquo;${note.overview}&rdquo;
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          ${note.sections.map(sec => `
+            <section class="space-y-3">
+              <h2 class="text-xl font-bold font-display text-emerald-700 flex items-center gap-2">
+                ${sec.heading}
+              </h2>
+              <p class="leading-relaxed opacity-90">${sec.body}</p>
+              ${sec.points && sec.points.length > 0 ? `
+                <div class="mt-3 pl-4 border-l-2 border-emerald-500 space-y-2">
+                  ${sec.points.map(pt => `
+                    <div class="flex items-start gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
+                      <span class="opacity-90">${pt}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              ` : ''}
+            </section>
+          `).join('')}
+        </div>
+
+        ${note.keyTakeaways && note.keyTakeaways.length > 0 ? `
+          <div class="mt-8 p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 space-y-3">
+            <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+              <i class="fa-solid fa-bookmark text-emerald-600"></i>
+              <span>Summary & Key Scientific Takeaways (Kamran Akbar, P.H.D Scholar)</span>
+            </div>
+            <ul class="space-y-2">
+              ${note.keyTakeaways.map(tk => `
+                <li class="flex items-start gap-2 text-xs sm:text-sm">
+                  <i class="fa-solid fa-check text-emerald-600 mt-1 shrink-0"></i>
+                  <span>${tk}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : ''}
+
+        <div class="mt-10 pt-6 border-t border-slate-200 text-center space-y-1">
+          <p class="text-xs font-bold text-slate-500">Pariran Academy © All Rights Reserved. Prepared by Kamran Akbar (P.H.D Scholar).</p>
+          <p class="text-[11px] text-amber-600 font-semibold">Strictly for direct online browser learning. No PDF download option available.</p>
+        </div>
+      `;
+
+      applyReaderPreferences();
+      document.getElementById('notes-reader-modal').classList.remove('hidden');
+    }
+
+    function closeNotesReader() {
+      document.getElementById('notes-reader-modal').classList.add('hidden');
+    }
+
+    function setReaderFontSize(size) {
+      readerFontSize = size;
+      applyReaderPreferences();
+    }
+
+    function setReaderTheme(theme) {
+      readerTheme = theme;
+      applyReaderPreferences();
+    }
+
+    function applyReaderPreferences() {
+      const card = document.getElementById('notes-reader-card');
+      const body = document.getElementById('reader-body');
+      const toolbar = document.getElementById('reader-toolbar');
+      const footer = document.getElementById('reader-footer');
+
+      // Theme
+      if (readerTheme === 'sepia') {
+        card.className = "w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl shadow-2xl border border-[#ebdccb] bg-[#fcf8f2] text-[#433422] overflow-hidden";
+        toolbar.className = "px-4 sm:px-6 py-3.5 border-b border-[#ebdccb] bg-[#f5ecdf] flex flex-wrap items-center justify-between gap-3";
+        footer.className = "px-6 py-3 border-t border-[#ebdccb] bg-[#f5ecdf] flex items-center justify-between";
+      } else if (readerTheme === 'dark') {
+        card.className = "w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl shadow-2xl border border-slate-800 bg-slate-900 text-slate-100 overflow-hidden";
+        toolbar.className = "px-4 sm:px-6 py-3.5 border-b border-slate-800 bg-slate-950 flex flex-wrap items-center justify-between gap-3";
+        footer.className = "px-6 py-3 border-t border-slate-800 bg-slate-950 flex items-center justify-between";
+      } else {
+        card.className = "w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl shadow-2xl border border-slate-200 bg-white text-slate-800 overflow-hidden";
+        toolbar.className = "px-4 sm:px-6 py-3.5 border-b border-slate-200 bg-slate-50 flex flex-wrap items-center justify-between gap-3";
+        footer.className = "px-6 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between";
+      }
+
+      // Font size
+      body.className = `p-6 sm:p-10 overflow-y-auto space-y-8 select-text leading-relaxed ${
+        readerFontSize === 'sm' ? 'text-sm' : readerFontSize === 'lg' ? 'text-lg' : 'text-base'
+      }`;
+    }
+
+    // -------------------------------------------------------------
+    // INTERACTIVE TIMED TEST SYSTEM
+    // -------------------------------------------------------------
+    let currentTest = null;
+    let testSession = null;
+    let timerInterval = null;
+
+    function renderTestSystem() {
+      const container = document.getElementById('test-system-container');
+
+      // STATE 1: Test Catalog (when no active test)
+      if (!testSession) {
+        container.innerHTML = `
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3 border border-emerald-200">
+              <i class="fa-solid fa-stopwatch text-emerald-700"></i>
+              <span>INTERACTIVE TIMED ASSESSMENT MODULE</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
+              BS Level Biology Timed Online Tests
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Test your conceptual clarity under authentic exam conditions. Features strict countdown timing, automatic submission when time elapses, instant dynamic marks calculation, and thorough explanations.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${allTests.map(test => `
+              <div class="bg-white rounded-2xl border border-slate-200 hover:border-emerald-500/60 shadow-sm hover:shadow-lg transition-all p-6 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-3">
+                    <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                      ${test.category}
+                    </span>
+                    <div class="flex items-center gap-1.5 text-xs text-slate-500 font-semibold bg-slate-100 px-2.5 py-1 rounded-lg">
+                      <i class="fa-regular fa-clock"></i>
+                      <span>${test.timeLimitMinutes} Mins</span>
+                    </div>
+                  </div>
+
+                  <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                    ${test.title}
+                  </h3>
+
+                  <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                    ${test.description}
+                  </p>
+
+                  <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
+                    <span>Total Questions: <strong class="text-slate-900">${test.questions.length} MCQs</strong></span>
+                    <span class="text-emerald-600 font-semibold">1 Mark Each</span>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                  <button onclick="startTest('${test.id}')" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-md cursor-pointer transition-all">
+                    <i class="fa-solid fa-play text-xs"></i>
+                    <span>Start Timed Assessment</span>
+                  </button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        return;
+      }
+
+      // STATE 2: Active Test In Progress
+      if (!testSession.isCompleted) {
+        const qIndex = testSession.currentQuestionIndex;
+        const q = currentTest.questions[qIndex];
+        const totalQ = currentTest.questions.length;
+        const answeredCount = Object.keys(testSession.userAnswers).length;
+        const isFlagged = testSession.flaggedQuestions.includes(qIndex);
+
+        const mins = Math.floor(testSession.remainingSeconds / 60).toString().padStart(2, '0');
+        const secs = (testSession.remainingSeconds % 60).toString().padStart(2, '0');
+        const isLowTime = testSession.remainingSeconds <= 60;
+
+        container.innerHTML = `
+          <div class="space-y-6">
+            <!-- Header Bar -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-md p-4 sm:p-5 sticky top-20 z-30">
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      LIVE EXAM
+                    </span>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 truncate max-w-md">
+                      ${currentTest.title}
+                    </h3>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    Question <strong class="text-slate-900">${qIndex + 1}</strong> of <strong>${totalQ}</strong> • ${answeredCount} Answered
+                  </p>
+                </div>
+
+                <!-- Timer & Submit -->
+                <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-2 px-4 py-2 rounded-xl font-mono text-base font-bold shadow-xs border transition-all ${
+                    isLowTime ? 'bg-red-50 text-red-600 border-red-300 animate-pulse' : 'bg-slate-900 text-emerald-400 border-slate-800'
+                  }">
+                    <i class="fa-solid fa-stopwatch ${isLowTime ? 'text-red-500' : 'text-emerald-400'}"></i>
+                    <span>${mins}:${secs}</span>
+                  </div>
+
+                  <button onclick="confirmSubmitTest()" class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs cursor-pointer">
+                    Submit Test
+                  </button>
+                </div>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="w-full bg-slate-100 h-2 rounded-full mt-4 overflow-hidden">
+                <div class="bg-emerald-600 h-2 rounded-full transition-all duration-300" style="width: ${(answeredCount / totalQ) * 100}%"></div>
+              </div>
+            </div>
+
+            <!-- Question and Navigation Palette -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              
+              <!-- Question Card -->
+              <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-4 mb-6">
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700">
+                      Question #${qIndex + 1}
+                    </span>
+                    <button onclick="toggleFlagQuestion(${qIndex})" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold cursor-pointer ${
+                      isFlagged ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }">
+                      <i class="fa-solid fa-flag ${isFlagged ? 'text-amber-600' : ''}"></i>
+                      <span>${isFlagged ? 'Flagged for Review' : 'Flag Question'}</span>
+                    </button>
+                  </div>
+
+                  <h4 class="text-base sm:text-lg font-bold text-slate-900 leading-relaxed mb-6 font-display">
+                    ${q.question}
+                  </h4>
+
+                  <div class="space-y-3">
+                    ${q.options.map((opt, oIdx) => {
+                      const isSelected = testSession.userAnswers[qIndex] === oIdx;
+                      const letters = ['A', 'B', 'C', 'D'];
+                      return `
+                        <div onclick="selectTestOption(${qIndex}, ${oIdx})" class="flex items-center gap-3 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                          isSelected ? 'border-emerald-600 bg-emerald-50/70 shadow-xs' : 'border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50'
+                        }">
+                          <div class="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 ${
+                            isSelected ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600 border border-slate-200'
+                          }">
+                            ${letters[oIdx]}
+                          </div>
+                          <span class="text-sm font-medium ${isSelected ? 'text-emerald-950 font-bold' : 'text-slate-700'}">
+                            ${opt}
+                          </span>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+
+                  ${testSession.userAnswers[qIndex] !== undefined ? `
+                    <div class="mt-4 text-right">
+                      <button onclick="clearTestOption(${qIndex})" class="text-xs text-slate-400 hover:text-red-600 font-semibold transition-colors cursor-pointer">
+                        Clear my choice
+                      </button>
+                    </div>
+                  ` : ''}
+                </div>
+
+                <!-- Bottom Question Navigation Buttons -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-3">
+                  <button ${qIndex === 0 ? 'disabled' : ''} onclick="goToQuestion(${qIndex - 1})" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50">
+                    <i class="fa-solid fa-chevron-left"></i> <span>Previous</span>
+                  </button>
+
+                  <div class="text-xs font-bold text-slate-400 hidden sm:block">
+                    Question ${qIndex + 1} of ${totalQ}
+                  </div>
+
+                  ${qIndex < totalQ - 1 ? `
+                    <button onclick="goToQuestion(${qIndex + 1})" class="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold cursor-pointer">
+                      <span>Next Question</span> <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                  ` : `
+                    <button onclick="confirmSubmitTest()" class="flex items-center gap-1.5 px-6 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold cursor-pointer shadow-md">
+                      <span>Finish & Submit</span> <i class="fa-solid fa-check"></i>
+                    </button>
+                  `}
+                </div>
+              </div>
+
+              <!-- Question Palette Sidebar -->
+              <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900 mb-1">Question Palette</h4>
+                  <p class="text-xs text-slate-500 mb-4">Click any question number to review your answer.</p>
+
+                  <div class="grid grid-cols-3 gap-2 text-[11px] mb-4 pb-4 border-b border-slate-100">
+                    <div class="flex items-center gap-1.5 text-emerald-800">
+                      <span class="w-3 h-3 rounded bg-emerald-600"></span> Answered
+                    </div>
+                    <div class="flex items-center gap-1.5 text-amber-700">
+                      <span class="w-3 h-3 rounded bg-amber-400"></span> Flagged
+                    </div>
+                    <div class="flex items-center gap-1.5 text-slate-500">
+                      <span class="w-3 h-3 rounded bg-slate-100 border border-slate-300"></span> Skipped
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-5 gap-2">
+                    ${currentTest.questions.map((_, idx) => {
+                      const isCurr = idx === qIndex;
+                      const isAns = testSession.userAnswers[idx] !== undefined;
+                      const isFlg = testSession.flaggedQuestions.includes(idx);
+                      let cls = 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200';
+                      if (isAns) cls = 'bg-emerald-600 text-white border-emerald-600 font-bold';
+                      if (isFlg) cls = 'bg-amber-400 text-slate-900 border-amber-500 font-bold';
+                      if (isCurr) cls += ' ring-2 ring-slate-900 ring-offset-2';
+                      return `
+                        <button onclick="goToQuestion(${idx})" class="h-10 rounded-xl text-xs font-bold border transition-all cursor-pointer ${cls}">
+                          ${idx + 1}
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-slate-100 text-center">
+                  <button onclick="quitTest()" class="text-xs text-slate-400 hover:text-red-500 transition-colors">
+                    Quit Assessment
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // STATE 3: Test Completed (Score Report & Explanations)
+      const score = testSession.score;
+      container.innerHTML = `
+        <div class="space-y-8 max-w-4xl mx-auto">
+          ${testSession.wasAutoSubmitted ? `
+            <div class="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 flex items-center gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-amber-600 text-lg"></i>
+              <div class="text-xs sm:text-sm">
+                <strong>Time Finished!</strong> The test was automatically submitted when the countdown hit 00:00. Your marks are computed below.
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Score Card Box -->
+          <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold mb-4 border border-emerald-200">
+              <i class="fa-solid fa-award text-emerald-600"></i>
+              <span>OFFICIAL PERFORMANCE REPORT</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">
+              ${currentTest.title}
+            </h3>
+            <p class="text-xs text-slate-500 mt-1">
+              Completed at ${score.submittedAt} • Pariran Academy Evaluation
+            </p>
+
+            <div class="my-8 flex flex-col items-center">
+              <div class="relative w-40 h-40 rounded-full flex flex-col items-center justify-center bg-gradient-to-tr from-slate-900 to-slate-800 text-white shadow-2xl ring-8 ring-emerald-500/20">
+                <span class="text-4xl font-extrabold font-display text-emerald-400">${score.percentage}%</span>
+                <span class="text-xs font-semibold text-slate-300 mt-0.5">${score.correctCount} / ${score.totalQuestions} Marks</span>
+              </div>
+
+              <div class="mt-4">
+                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider ${
+                  score.percentage >= 80 ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' :
+                  score.percentage >= 50 ? 'bg-blue-100 text-blue-800 border border-blue-300' :
+                  'bg-red-100 text-red-800 border border-red-300'
+                }">
+                  ${score.percentage >= 80 ? 'Outstanding Distinction' : score.percentage >= 50 ? 'Qualified & Passed' : 'Needs Revision & Re-Attempt'}
+                </span>
+              </div>
+            </div>
+
+            <!-- Breakdown -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-lg mx-auto py-4 border-t border-b border-slate-100">
+              <div class="p-3 bg-emerald-50 rounded-xl text-emerald-800">
+                <div class="text-2xl font-bold font-display">${score.correctCount}</div>
+                <div class="text-[11px] font-semibold mt-0.5">Correct</div>
+              </div>
+              <div class="p-3 bg-red-50 rounded-xl text-red-800">
+                <div class="text-2xl font-bold font-display">${score.incorrectCount}</div>
+                <div class="text-[11px] font-semibold mt-0.5">Incorrect</div>
+              </div>
+              <div class="p-3 bg-slate-100 rounded-xl text-slate-700">
+                <div class="text-2xl font-bold font-display">${score.unattemptedCount}</div>
+                <div class="text-[11px] font-semibold mt-0.5">Skipped</div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <button onclick="startTest('${currentTest.id}')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-md cursor-pointer">
+                <i class="fa-solid fa-rotate-left"></i> <span>Retake Test</span>
+              </button>
+              <button onclick="resetTestView()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold cursor-pointer">
+                <span>Choose Another Test</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Comprehensive Explanations List -->
+          <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6">
+            <div class="flex items-center justify-between border-b pb-4">
+              <h4 class="text-lg font-bold text-slate-900 font-display">
+                Comprehensive Question Analysis & Explanations
+              </h4>
+              <span class="text-xs text-slate-500 font-medium">By Kamran Akbar (P.H.D Scholar)</span>
+            </div>
+
+            <div class="space-y-6">
+              ${currentTest.questions.map((q, idx) => {
+                const userChoice = testSession.userAnswers[idx];
+                const isCorrect = userChoice === q.correctAnswer;
+                const isSkipped = userChoice === undefined;
+                const letters = ['A', 'B', 'C', 'D'];
+
+                return `
+                  <div class="p-5 rounded-2xl border-2 ${
+                    isCorrect ? 'border-emerald-200 bg-emerald-50/30' : isSkipped ? 'border-slate-200 bg-slate-50' : 'border-red-200 bg-red-50/30'
+                  }">
+                    <div class="flex items-start justify-between gap-3 mb-2">
+                      <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-800">Q${idx + 1}</span>
+                      <div>
+                        ${isCorrect ? `
+                          <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+                            <i class="fa-solid fa-check mr-1"></i> Correct (+1)
+                          </span>
+                        ` : isSkipped ? `
+                          <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">
+                            <i class="fa-solid fa-minus mr-1"></i> Skipped (0)
+                          </span>
+                        ` : `
+                          <span class="text-xs font-bold text-red-700 bg-red-100 px-2.5 py-0.5 rounded-full">
+                            <i class="fa-solid fa-xmark mr-1"></i> Incorrect (0)
+                          </span>
+                        `}
+                      </div>
+                    </div>
+
+                    <p class="text-sm font-bold text-slate-900 mb-4">${q.question}</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                      ${q.options.map((opt, oIdx) => {
+                        const isOptCorrect = oIdx === q.correctAnswer;
+                        const isUserOpt = userChoice === oIdx;
+                        let sty = 'border-slate-200 bg-white text-slate-700';
+                        if (isOptCorrect) sty = 'border-emerald-500 bg-emerald-100 text-emerald-950 font-bold';
+                        else if (isUserOpt && !isCorrect) sty = 'border-red-400 bg-red-100 text-red-950 line-through';
+
+                        return `
+                          <div class="p-2.5 rounded-xl border text-xs flex items-center gap-2 ${sty}">
+                            <span class="w-5 h-5 rounded-md flex items-center justify-center font-bold text-[10px] bg-slate-100 shrink-0">${letters[oIdx]}</span>
+                            <span>${opt}</span>
+                            ${isOptCorrect ? '<i class="fa-solid fa-check text-emerald-600 ml-auto"></i>' : ''}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-100 text-xs text-slate-700 border border-slate-200 space-y-1">
+                      <div class="font-bold text-slate-900 flex items-center gap-1.5">
+                        <i class="fa-solid fa-lightbulb text-amber-500"></i>
+                        <span>Scientific Explanation:</span>
+                      </div>
+                      <p class="leading-relaxed">${q.explanation}</p>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function startTest(testId) {
+      const test = allTests.find(t => t.id === testId);
+      if (!test) return;
+
+      currentTest = test;
+      testSession = {
+        testId: test.id,
+        totalTimeSeconds: test.timeLimitMinutes * 60,
+        remainingSeconds: test.timeLimitMinutes * 60,
+        userAnswers: {},
+        flaggedQuestions: [],
+        currentQuestionIndex: 0,
+        isCompleted: false,
+        wasAutoSubmitted: false
+      };
+
+      if (timerInterval) clearInterval(timerInterval);
+      playAudioTone('beep');
+
+      timerInterval = setInterval(() => {
+        if (!testSession || testSession.isCompleted) {
+          clearInterval(timerInterval);
+          return;
+        }
+
+        testSession.remainingSeconds -= 1;
+
+        if (testSession.remainingSeconds === 60) {
+          playAudioTone('warning');
+        }
+
+        if (testSession.remainingSeconds <= 0) {
+          clearInterval(timerInterval);
+          testSession.remainingSeconds = 0;
+          testSession.wasAutoSubmitted = true;
+          submitAssessment();
+          return;
+        }
+
+        renderTestSystem();
+      }, 1000);
+
+      renderTestSystem();
+    }
+
+    function selectTestOption(qIndex, optIndex) {
+      if (!testSession || testSession.isCompleted) return;
+      playAudioTone('beep');
+      testSession.userAnswers[qIndex] = optIndex;
+      renderTestSystem();
+    }
+
+    function clearTestOption(qIndex) {
+      if (!testSession || testSession.isCompleted) return;
+      delete testSession.userAnswers[qIndex];
+      renderTestSystem();
+    }
+
+    function toggleFlagQuestion(qIndex) {
+      if (!testSession || testSession.isCompleted) return;
+      const idx = testSession.flaggedQuestions.indexOf(qIndex);
+      if (idx > -1) {
+        testSession.flaggedQuestions.splice(idx, 1);
+      } else {
+        testSession.flaggedQuestions.push(qIndex);
+      }
+      renderTestSystem();
+    }
+
+    function goToQuestion(qIndex) {
+      if (!testSession || testSession.isCompleted) return;
+      testSession.currentQuestionIndex = qIndex;
+      renderTestSystem();
+    }
+
+    function confirmSubmitTest() {
+      const answered = Object.keys(testSession.userAnswers).length;
+      const total = currentTest.questions.length;
+      if (answered < total) {
+        if (!confirm(`You have only answered ${answered} of ${total} questions. Are you sure you want to finish and submit?`)) {
+          return;
+        }
+      } else {
+        if (!confirm('Are you ready to submit your assessment?')) return;
+      }
+      submitAssessment();
+    }
+
+    function submitAssessment() {
+      if (timerInterval) clearInterval(timerInterval);
+      const questions = currentTest.questions;
+      let correct = 0;
+      let incorrect = 0;
+      let unattempted = 0;
+
+      questions.forEach((q, idx) => {
+        const userChoice = testSession.userAnswers[idx];
+        if (userChoice === undefined) unattempted++;
+        else if (userChoice === q.correctAnswer) correct++;
+        else incorrect++;
+      });
+
+      const total = questions.length;
+      const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+      testSession.isCompleted = true;
+      testSession.score = {
+        totalQuestions: total,
+        correctCount: correct,
+        incorrectCount: incorrect,
+        unattemptedCount: unattempted,
+        percentage: percentage,
+        submittedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+
+      playAudioTone('success');
+      renderTestSystem();
+    }
+
+    function quitTest() {
+      if (confirm('Are you sure you want to exit this test? Your progress will be lost.')) {
+        if (timerInterval) clearInterval(timerInterval);
+        testSession = null;
+        currentTest = null;
+        renderTestSystem();
+      }
+    }
+
+    function resetTestView() {
+      testSession = null;
+      currentTest = null;
+      renderTestSystem();
+    }
+
+    // -------------------------------------------------------------
+    // SECURE ADMIN PANEL (TEST & NOTES UPLOAD)
+    // -------------------------------------------------------------
+    let isAdminLoggedIn = false;
+    let currentAdminTab = 'uploadTest';
+
+    function getAdminPassword() {
+      return localStorage.getItem('pariran_admin_pwd') || 'admin123';
+    }
+
+    function openAdminModal() {
+      document.getElementById('admin-modal').classList.remove('hidden');
+      renderAdminModalBody();
+    }
+
+    function closeAdminModal() {
+      document.getElementById('admin-modal').classList.add('hidden');
+    }
+
+    function handleAdminLogout() {
+      isAdminLoggedIn = false;
+      document.getElementById('admin-logout-btn').classList.add('hidden');
+      renderAdminModalBody();
+    }
+
+    function handleAdminLoginSubmit(e) {
+      e.preventDefault();
+      const val = document.getElementById('admin-pwd-input').value;
+      if (val === getAdminPassword()) {
+        isAdminLoggedIn = true;
+        document.getElementById('admin-logout-btn').classList.remove('hidden');
+        renderAdminModalBody();
+      } else {
+        const errEl = document.getElementById('admin-auth-error');
+        errEl.innerText = 'Invalid password. (Default is admin123)';
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    function setAdminTab(tab) {
+      currentAdminTab = tab;
+      renderAdminModalBody();
+    }
+
+    function renderAdminModalBody() {
+      const container = document.getElementById('admin-modal-body');
+
+      // STATE 1: Password Prompt
+      if (!isAdminLoggedIn) {
+        container.innerHTML = `
+          <div class="p-8 sm:p-12 text-center max-w-md mx-auto my-auto space-y-6">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-sm">
+              <i class="fa-solid fa-lock text-3xl text-emerald-700"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-slate-900 font-display">Administrator Authentication</h4>
+              <p class="text-xs text-slate-500 mt-1">Enter your secure password to create, upload, and edit tests & notes.</p>
+            </div>
+            <form onsubmit="handleAdminLoginSubmit(event)" class="space-y-4">
+              <input id="admin-pwd-input" type="password" required placeholder="Enter password..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-center font-mono focus:ring-2 focus:ring-emerald-500">
+              <p id="admin-auth-error" class="hidden text-xs text-red-600 font-medium"></p>
+              <button type="submit" class="w-full py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-md cursor-pointer transition-all">
+                Access Admin Portal
+              </button>
+            </form>
+            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs">
+              <strong>Quick Hint:</strong> Default password is <code class="bg-emerald-200 px-1 rounded font-bold font-mono">admin123</code>. You can change this in the Security tab once logged in.
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // STATE 2: Logged In Admin Tabs
+      container.innerHTML = `
+        <!-- Tab Bar -->
+        <div class="px-6 border-b border-slate-200 bg-slate-50 flex items-center gap-2 overflow-x-auto">
+          <button onclick="setAdminTab('uploadTest')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'uploadTest' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+          }">
+            <i class="fa-solid fa-stopwatch"></i> <span>Upload & Add Tests</span>
+          </button>
+          <button onclick="setAdminTab('uploadNotes')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'uploadNotes' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+          }">
+            <i class="fa-solid fa-book-open"></i> <span>Upload Online Notes</span>
+          </button>
+          <button onclick="setAdminTab('manageContent')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'manageContent' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+          }">
+            <i class="fa-solid fa-layer-group"></i> <span>Manage Library</span>
+          </button>
+          <button onclick="setAdminTab('security')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'security' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+          }">
+            <i class="fa-solid fa-key"></i> <span>Change Password</span>
+          </button>
+        </div>
+
+        <!-- Content Area -->
+        <div class="flex-1 p-6 overflow-y-auto space-y-6">
+          ${renderAdminTabContent()}
+        </div>
+      `;
+    }
+
+    function renderAdminTabContent() {
+      if (currentAdminTab === 'uploadTest') {
+        return `
+          <div class="space-y-8">
+            <!-- Step 1: Create Assessment Container -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+                <i class="fa-solid fa-plus-circle text-emerald-600"></i>
+                <h4 class="text-sm font-bold text-slate-900">Step 1: Create a New Timed Test</h4>
+              </div>
+              <form onsubmit="handleCreateTest(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Test Title *</label>
+                  <input id="new-test-title" type="text" required placeholder="e.g. Molecular Genetics & Transcription Test" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Subject / Category</label>
+                  <input id="new-test-category" type="text" placeholder="e.g. Genetics, BS Level Biology" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Countdown Time Limit (Minutes)</label>
+                  <input id="new-test-time" type="number" min="1" max="180" value="10" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Description</label>
+                  <input id="new-test-desc" type="text" placeholder="Short description for students..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <button type="submit" class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+                    Create Test
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Step 2: Add MCQs -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-4 shadow-xs">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-question text-emerald-600"></i>
+                  <h4 class="text-sm font-bold text-slate-900">Step 2: Add MCQs to Test</h4>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-semibold">
+                  <span class="text-slate-500">Target Test:</span>
+                  <select id="target-test-select" class="px-2.5 py-1 rounded-lg border border-slate-300 bg-slate-50">
+                    ${allTests.map(t => `<option value="${t.id}">${t.title} (${t.questions.length} Qs)</option>`).join('')}
+                  </select>
+                </div>
+              </div>
+
+              <form onsubmit="handleAddQuestion(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Question Text *</label>
+                  <textarea id="q-text" rows="2" required placeholder="e.g. Which enzyme proofreads nascent DNA strands?" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Option A (Select radio if correct)</label>
+                    <div class="flex items-center gap-2">
+                      <input type="radio" name="correct-radio" value="0" checked class="accent-emerald-600">
+                      <input id="opt-a" type="text" required placeholder="Option A" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Option B (Select radio if correct)</label>
+                    <div class="flex items-center gap-2">
+                      <input type="radio" name="correct-radio" value="1" class="accent-emerald-600">
+                      <input id="opt-b" type="text" required placeholder="Option B" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Option C (Select radio if correct)</label>
+                    <div class="flex items-center gap-2">
+                      <input type="radio" name="correct-radio" value="2" class="accent-emerald-600">
+                      <input id="opt-c" type="text" required placeholder="Option C" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Option D (Select radio if correct)</label>
+                    <div class="flex items-center gap-2">
+                      <input type="radio" name="correct-radio" value="3" class="accent-emerald-600">
+                      <input id="opt-d" type="text" required placeholder="Option D" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Scientific Explanation (Shown to students in review mode)</label>
+                  <input id="q-exp" type="text" placeholder="Detailed explanation for learning..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+
+                <div class="text-right">
+                  <button type="submit" class="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+                    Upload Question
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Bulk Importer -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-cloud-arrow-up text-emerald-700"></i>
+                  <h4 class="text-sm font-bold text-slate-900">Bulk MCQ Quick Importer</h4>
+                </div>
+                <span class="text-[11px] text-slate-500">Fast batch parser</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Paste questions formatted with Q:, A:, B:, C:, D:, and Correct: (A, B, C, or D).
+              </p>
+              <textarea id="bulk-mcq-text" rows="4" placeholder="Q: What organelle synthesizes ATP?\\nA: Ribosome\\nB: Mitochondria\\nC: Lysosome\\nD: Vacuole\\nCorrect: B\\nExp: Through oxidative phosphorylation." class="w-full font-mono text-xs p-3 rounded-xl border border-slate-300 bg-white"></textarea>
+              <div class="text-right">
+                <button onclick="handleBulkImport()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+                  Import Batch Questions
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (currentAdminTab === 'uploadNotes') {
+        return `
+          <div class="space-y-6">
+            <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-amber-600"></i>
+              <span><strong>Protected Online Viewer:</strong> Uploaded notes are displayed in the online reader without any download buttons.</span>
+            </div>
+
+            <form onsubmit="handleCreateNote(event)" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Note Title *</label>
+                  <input id="note-title-in" type="text" required placeholder="e.g. Calvin Cycle & Carbon Fixation" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Subject / Category</label>
+                  <input id="note-cat-in" type="text" placeholder="e.g. Plant Sciences, Cell Biology" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Sub-Topic</label>
+                  <input id="note-topic-in" type="text" placeholder="e.g. Photosynthesis (BS Level)" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Estimated Reading Time</label>
+                  <input id="note-time-in" type="text" value="7 min read" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Overview / Summary</label>
+                <textarea id="note-over-in" rows="2" placeholder="Summary of the lecture topic..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs"></textarea>
+              </div>
+
+              <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
+                <h5 class="text-xs font-bold text-slate-800 uppercase">Section 1 *</h5>
+                <input id="note-sec1-head" type="text" required placeholder="Section 1 Heading (e.g. 1. RuBisCO Enzymatic Function)" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs bg-white mb-2">
+                <textarea id="note-sec1-body" rows="3" required placeholder="Detailed content for Section 1..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white"></textarea>
+                <textarea id="note-sec1-pts" rows="2" placeholder="Key bullet points (One per line)..." class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs bg-white"></textarea>
+              </div>
+
+              <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
+                <h5 class="text-xs font-bold text-slate-800 uppercase">Section 2 (Optional)</h5>
+                <input id="note-sec2-head" type="text" placeholder="Section 2 Heading (e.g. 2. Regeneration of RuBP)" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs bg-white mb-2">
+                <textarea id="note-sec2-body" rows="3" placeholder="Detailed content for Section 2..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white"></textarea>
+                <textarea id="note-sec2-pts" rows="2" placeholder="Key bullet points (One per line)..." class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs bg-white"></textarea>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Author Key Takeaways (One per line)</label>
+                <textarea id="note-takeaways" rows="2" placeholder="Takeaway 1&#10;Takeaway 2" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs"></textarea>
+              </div>
+
+              <div class="text-right">
+                <button type="submit" class="px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+                  Publish Online Note
+                </button>
+              </div>
+            </form>
+          </div>
+        `;
+      }
+
+      if (currentAdminTab === 'manageContent') {
+        return `
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-sm font-bold text-slate-900 mb-3 flex items-center justify-between">
+                <span>Existing Assessments (${allTests.length})</span>
+                <span class="text-xs text-slate-500 font-normal">Click delete icon to remove test</span>
+              </h4>
+              <div class="space-y-2">
+                ${allTests.map(t => `
+                  <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">${t.title}</div>
+                      <div class="text-[11px] text-slate-500 mt-0.5">${t.category} • ${t.questions.length} Questions • ${t.timeLimitMinutes} Mins</div>
+                    </div>
+                    <button onclick="handleDeleteTest('${t.id}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50" title="Delete Test">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200">
+              <h4 class="text-sm font-bold text-slate-900 mb-3 flex items-center justify-between">
+                <span>Existing Online Notes (${allNotes.length})</span>
+                <span class="text-xs text-slate-500 font-normal">Click delete icon to remove note</span>
+              </h4>
+              <div class="space-y-2">
+                ${allNotes.map(n => `
+                  <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">${n.title}</div>
+                      <div class="text-[11px] text-slate-500 mt-0.5">${n.category} • ${n.readTime} • ${n.sections.length} Sections</div>
+                    </div>
+                    <button onclick="handleDeleteNote('${n.id}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50" title="Delete Note">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200">
+              <div class="p-4 rounded-2xl bg-slate-100 flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-bold text-slate-800">Restore Factory Sample Data</div>
+                  <div class="text-[11px] text-slate-500">Resets back to Kamran Akbar's original default assessments & notes.</div>
+                </div>
+                <button onclick="handleRestoreDefaults()" class="px-4 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl">
+                  Restore Defaults
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (currentAdminTab === 'security') {
+        return `
+          <div class="max-w-md mx-auto py-6 space-y-6">
+            <div>
+              <h4 class="text-base font-bold text-slate-900 font-display">Change Administrator Password</h4>
+              <p class="text-xs text-slate-500 mt-1">Prevent unauthorized modification of Pariran Academy content.</p>
+            </div>
+            <form onsubmit="handleChangePasswordSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Current Password *</label>
+                <input id="pwd-curr" type="password" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">New Password (Min 6 chars) *</label>
+                <input id="pwd-new" type="password" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Confirm New Password *</label>
+                <input id="pwd-conf" type="password" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs">
+              </div>
+              <p id="pwd-msg" class="hidden text-xs font-bold"></p>
+              <button type="submit" class="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+                Update Password
+              </button>
+            </form>
+          </div>
+        `;
+      }
+    }
+
+    // Admin Handlers
+    function handleCreateTest(e) {
+      e.preventDefault();
+      const title = document.getElementById('new-test-title').value.trim();
+      const category = document.getElementById('new-test-category').value.trim() || 'General Biology';
+      const time = Number(document.getElementById('new-test-time').value) || 10;
+      const desc = document.getElementById('new-test-desc').value.trim() || 'Assessment created by Pariran Academy.';
+
+      const newTest = {
+        id: 'test-custom-' + Date.now(),
+        title,
+        category,
+        description: desc,
+        timeLimitMinutes: time,
+        questions: []
+      };
+
+      allTests.unshift(newTest);
+      saveTests(allTests);
+      alert(`Test "${title}" created! You can now add questions.`);
+      renderTestSystem();
+      renderAdminModalBody();
+    }
+
+    function handleAddQuestion(e) {
+      e.preventDefault();
+      const testId = document.getElementById('target-test-select').value;
+      const test = allTests.find(t => t.id === testId);
+      if (!test) return;
+
+      const qText = document.getElementById('q-text').value.trim();
+      const a = document.getElementById('opt-a').value.trim();
+      const b = document.getElementById('opt-b').value.trim();
+      const c = document.getElementById('opt-c').value.trim();
+      const d = document.getElementById('opt-d').value.trim();
+      const correctRadios = document.getElementsByName('correct-radio');
+      let correct = 0;
+      for (let r of correctRadios) {
+        if (r.checked) correct = Number(r.value);
+      }
+      const exp = document.getElementById('q-exp').value.trim() || 'Authored by Kamran Akbar (P.H.D Scholar).';
+
+      test.questions.push({
+        id: 'q-custom-' + Date.now(),
+        question: qText,
+        options: [a, b, c, d],
+        correctAnswer: correct,
+        explanation: exp
+      });
+
+      saveTests(allTests);
+      alert('Question uploaded successfully!');
+      renderTestSystem();
+      renderAdminModalBody();
+    }
+
+    function handleBulkImport() {
+      const testId = document.getElementById('target-test-select')?.value;
+      const test = allTests.find(t => t.id === testId);
+      if (!test) { alert('Please select a test first.'); return; }
+
+      const raw = document.getElementById('bulk-mcq-text').value.trim();
+      if (!raw) { alert('Please enter bulk MCQ text.'); return; }
+
+      const blocks = raw.split(/\\n\\s*\\n/).filter(b => b.trim());
+      let count = 0;
+
+      blocks.forEach(blk => {
+        const lines = blk.split('\\n').map(l => l.trim()).filter(Boolean);
+        let q = '', a = '', b = '', c = '', d = '', correct = 0, exp = 'Explanation by Kamran Akbar.';
+
+        lines.forEach(l => {
+          if (l.match(/^Q:\\s*(.*)/i)) q = l.replace(/^Q:\\s*/i, '');
+          else if (l.match(/^A:\\s*(.*)/i)) a = l.replace(/^A:\\s*/i, '');
+          else if (l.match(/^B:\\s*(.*)/i)) b = l.replace(/^B:\\s*/i, '');
+          else if (l.match(/^C:\\s*(.*)/i)) c = l.replace(/^C:\\s*/i, '');
+          else if (l.match(/^D:\\s*(.*)/i)) d = l.replace(/^D:\\s*/i, '');
+          else if (l.match(/^Correct:\\s*(.*)/i)) {
+            const ans = l.replace(/^Correct:\\s*/i, '').trim().toUpperCase();
+            if (ans === 'B') correct = 1;
+            else if (ans === 'C') correct = 2;
+            else if (ans === 'D') correct = 3;
+            else correct = 0;
+          } else if (l.match(/^Exp:\\s*(.*)/i)) {
+            exp = l.replace(/^Exp:\\s*/i, '');
+          }
+        });
+
+        if (q && a && b && c && d) {
+          test.questions.push({
+            id: 'q-bulk-' + Date.now() + '-' + Math.random().toString(36).substring(2, 5),
+            question: q,
+            options: [a, b, c, d],
+            correctAnswer: correct,
+            explanation: exp
+          });
+          count++;
+        }
+      });
+
+      saveTests(allTests);
+      alert(`Imported ${count} questions into "${test.title}"!`);
+      renderTestSystem();
+      renderAdminModalBody();
+    }
+
+    function handleCreateNote(e) {
+      e.preventDefault();
+      const title = document.getElementById('note-title-in').value.trim();
+      const category = document.getElementById('note-cat-in').value.trim() || 'General Biology';
+      const topic = document.getElementById('note-topic-in').value.trim() || 'Curriculum (BS Level)';
+      const readTime = document.getElementById('note-time-in').value.trim() || '7 min read';
+      const overview = document.getElementById('note-over-in').value.trim() || 'Curriculum notes for direct browser reading on Pariran Academy.';
+
+      const sec1Head = document.getElementById('note-sec1-head').value.trim();
+      const sec1Body = document.getElementById('note-sec1-body').value.trim();
+      const sec1Pts = document.getElementById('note-sec1-pts').value.trim();
+
+      const sections = [{
+        heading: sec1Head,
+        body: sec1Body,
+        points: sec1Pts ? sec1Pts.split('\\n').map(p => p.trim()).filter(Boolean) : []
+      }];
+
+      const sec2Head = document.getElementById('note-sec2-head')?.value.trim();
+      const sec2Body = document.getElementById('note-sec2-body')?.value.trim();
+      const sec2Pts = document.getElementById('note-sec2-pts')?.value.trim();
+
+      if (sec2Head && sec2Body) {
+        sections.push({
+          heading: sec2Head,
+          body: sec2Body,
+          points: sec2Pts ? sec2Pts.split('\\n').map(p => p.trim()).filter(Boolean) : []
+        });
+      }
+
+      const twRaw = document.getElementById('note-takeaways')?.value.trim();
+      const keyTakeaways = twRaw ? twRaw.split('\\n').map(t => t.trim()).filter(Boolean) : [
+        'Study concepts prepared for BS Biology by Kamran Akbar.'
+      ];
+
+      allNotes.unshift({
+        id: 'note-custom-' + Date.now(),
+        title,
+        category,
+        topic,
+        readTime,
+        overview,
+        sections,
+        keyTakeaways
+      });
+
+      saveNotes(allNotes);
+      alert(`Note "${title}" published! Available immediately in the Online Notes Viewer.`);
+      renderNotesCategories();
+      renderNotesGrid();
+      renderAdminModalBody();
+    }
+
+    function handleDeleteTest(id) {
+      if (confirm('Delete this test?')) {
+        allTests = allTests.filter(t => t.id !== id);
+        saveTests(allTests);
+        renderTestSystem();
+        renderAdminModalBody();
+      }
+    }
+
+    function handleDeleteNote(id) {
+      if (confirm('Delete this note?')) {
+        allNotes = allNotes.filter(n => n.id !== id);
+        saveNotes(allNotes);
+        renderNotesCategories();
+        renderNotesGrid();
+        renderAdminModalBody();
+      }
+    }
+
+    function handleRestoreDefaults() {
+      if (confirm('Restore factory default notes and tests? Custom uploads will be reset.')) {
+        allNotes = DEFAULT_NOTES;
+        allTests = DEFAULT_TESTS;
+        saveNotes(allNotes);
+        saveTests(allTests);
+        renderNotesCategories();
+        renderNotesGrid();
+        renderTestSystem();
+        renderAdminModalBody();
+      }
+    }
+
+    function handleChangePasswordSubmit(e) {
+      e.preventDefault();
+      const curr = document.getElementById('pwd-curr').value;
+      const nw = document.getElementById('pwd-new').value;
+      const conf = document.getElementById('pwd-conf').value;
+      const msg = document.getElementById('pwd-msg');
+
+      if (curr !== getAdminPassword()) {
+        msg.className = "text-xs font-bold text-red-600";
+        msg.innerText = "Current password does not match.";
+        msg.classList.remove('hidden');
+        return;
+      }
+      if (nw.length < 6) {
+        msg.className = "text-xs font-bold text-red-600";
+        msg.innerText = "New password must be at least 6 characters.";
+        msg.classList.remove('hidden');
+        return;
+      }
+      if (nw !== conf) {
+        msg.className = "text-xs font-bold text-red-600";
+        msg.innerText = "New passwords do not match.";
+        msg.classList.remove('hidden');
+        return;
+      }
+
+      localStorage.setItem('pariran_admin_pwd', nw);
+      msg.className = "text-xs font-bold text-emerald-700";
+      msg.innerText = "Password changed successfully!";
+      msg.classList.remove('hidden');
+      document.getElementById('pwd-curr').value = '';
+      document.getElementById('pwd-new').value = '';
+      document.getElementById('pwd-conf').value = '';
+    }
+
+    // -------------------------------------------------------------
+    // INITIALIZATION ON PAGE LOAD
+    // -------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').innerText = new Date().getFullYear();
+      renderNotesCategories();
+      renderNotesGrid();
+      renderTestSystem();
+    });
+  </script>
+</body>
+</html>
