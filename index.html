@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pariran Academy | Kamran Akbar (P.H.D Scholar)</title>
-  <meta name="description" content="Official learning platform of Pariran Academy by Kamran Akbar (P.H.D Scholar). Interactive timed online tests, secure notes viewer, and biological sciences academy.">
-  <meta property="og:title" content="Pariran Academy | Kamran Akbar (P.H.D Scholar)">
-  <meta property="og:description" content="Interactive timed tests, secure online notes viewer, and biology curriculum.">
+  <title>Pariran Academy | Official Learning & Assessment Portal</title>
+  <meta name="description" content="Pariran Academy official educational portal featuring vibrant student showcase, online notes viewer, and interactive timed online tests.">
+  <meta property="og:title" content="Pariran Academy | Official Learning Portal">
+  <meta property="og:description" content="Interactive timed tests, online notes viewer, and student learning community.">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
@@ -27,18 +27,6 @@
             sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
             display: ['"Outfit"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b',
-              950: '#022c22',
-            }
           }
         }
       }
@@ -54,35 +42,57 @@
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* Daraz-style smooth continuous marquee for incoming/outgoing student photos */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 38s linear infinite;
+    }
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* Smooth slide progress bar */
+    @keyframes progressFill {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    .slide-progress-animate {
+      animation: progressFill 1.5s linear forwards;
+    }
+
+    /* Smooth image entrance */
+    @keyframes fadeZoom {
+      0% { opacity: 0.35; transform: scale(1.04); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .banner-fade-in {
+      animation: fadeZoom 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
   </style>
-<script src="/_aistudio-iframe.js?v=6634132a"></script></head>
+<script src="/_aistudio-iframe.js?v=1f94f900"></script></head>
 <body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-emerald-500 selection:text-white flex flex-col min-h-screen">
 
-  <!-- Top Academic Announcement Banner -->
-  <div class="bg-gradient-to-r from-emerald-900 via-teal-950 to-slate-950 text-white text-xs py-1.5 px-4 border-b border-emerald-800/40">
+  <!-- Top Academic Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-950 text-white text-xs py-1.5 px-4 border-b border-emerald-800/40">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-0.5 rounded-full border border-emerald-400/30 text-[11px]">
-          <i class="fa-solid fa-graduation-cap"></i> BS Level & MDCAT
+        <span class="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-0.5 rounded-full border border-emerald-400/30 text-[11px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          PHD &amp; Pre-Medical
         </span>
-        <span class="text-slate-300 hidden sm:inline">
-          Official Portal of <strong class="text-white">Kamran Akbar</strong> (P.H.D Scholar)
+        <span id="topbar-academy-label" class="text-slate-300 hidden sm:inline">
+          Welcome to <strong class="text-white">Pariran Academy</strong>
         </span>
       </div>
 
-      <div class="flex items-center gap-3 text-[11px]">
-        <span class="hidden md:inline text-slate-400">Official Social Media:</span>
-        <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors font-semibold flex items-center gap-1">
-          <i class="fa-brands fa-youtube text-red-500 text-sm"></i> <span>YouTube</span>
-        </a>
-        <span class="text-slate-700">|</span>
-        <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors font-semibold flex items-center gap-1">
-          <i class="fa-brands fa-tiktok text-sm"></i> <span>TikTok</span>
-        </a>
-        <span class="text-slate-700">|</span>
-        <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors font-semibold flex items-center gap-1">
-          <i class="fa-brands fa-facebook text-blue-400 text-sm"></i> <span class="hidden sm:inline">Facebook</span>
-        </a>
+      <div id="topbar-socials" class="flex items-center gap-3 text-[11px]">
+        <!-- Populated dynamically from Profile settings -->
       </div>
     </div>
   </div>
@@ -103,33 +113,33 @@
                 PARIRAN <span class="text-emerald-700">ACADEMY</span>
               </span>
               <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
-                BS Bio
+                PHD Bio
               </span>
             </div>
-            <p class="text-xs text-slate-500 font-medium">
-              Director: Kamran Akbar <span class="text-emerald-700 font-semibold">(P.H.D Scholar)</span>
+            <p id="header-director-line" class="text-xs text-slate-500 font-medium">
+              Biological Sciences Learning Hub
             </p>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-1.5 lg:gap-3 text-sm font-semibold">
+        <nav class="hidden md:flex items-center gap-1.5 lg:gap-2 text-sm font-semibold">
           <a href="#hero" class="px-3 py-2 rounded-lg text-slate-700 hover:text-emerald-700 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
-            <i class="fa-solid fa-user-graduate text-slate-400"></i> <span>About Founder</span>
+            <i class="fa-solid fa-images text-slate-400"></i> <span>Campus &amp; Profile</span>
           </a>
           <a href="#notes-section" class="px-3 py-2 rounded-lg text-slate-700 hover:text-emerald-700 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
             <i class="fa-solid fa-book-open text-slate-400"></i> <span>Online Notes</span>
             <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded-full border border-amber-200">No Download</span>
           </a>
           <a href="#test-section" class="px-3 py-2 rounded-lg text-slate-700 hover:text-emerald-700 hover:bg-slate-100 transition-colors flex items-center gap-1.5">
-            <i class="fa-solid fa-stopwatch text-slate-400"></i> <span>Timed Online Tests</span>
+            <i class="fa-solid fa-stopwatch text-slate-400"></i> <span>Timed Tests</span>
             <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded-full">Live MCQ</span>
           </a>
         </nav>
 
         <!-- Right Quick Actions -->
         <div class="hidden md:flex items-center gap-3">
-          <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-xs transition-all">
+          <a id="header-yt-cta" href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-xs transition-all">
             <i class="fa-brands fa-youtube"></i>
             <span>Subscribe</span>
           </a>
@@ -141,7 +151,7 @@
 
         <!-- Mobile Menu Toggle Button -->
         <div class="flex md:hidden items-center gap-2">
-          <button onclick="openAdminModal()" class="p-2 rounded-lg bg-slate-900 text-white text-xs">
+          <button onclick="openAdminModal()" class="p-2 rounded-lg bg-slate-900 text-white text-xs" aria-label="Admin Portal">
             <i class="fa-solid fa-lock"></i>
           </button>
           <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Toggle menu">
@@ -156,7 +166,7 @@
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
       <div class="space-y-1">
         <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-100">
-          <i class="fa-solid fa-user-graduate mr-2 text-emerald-600"></i> About Founder
+          <i class="fa-solid fa-images mr-2 text-emerald-600"></i> Campus &amp; Profile
         </a>
         <a href="#notes-section" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-100">
           <span><i class="fa-solid fa-book-open mr-2 text-emerald-600"></i> Online Notes</span>
@@ -168,192 +178,161 @@
         </a>
       </div>
 
-      <div class="pt-3 border-t border-slate-100 space-y-2">
-        <div class="grid grid-cols-2 gap-2">
-          <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-red-600 text-white font-bold text-xs">
-            <i class="fa-brands fa-youtube"></i> Subscribe YT
-          </a>
-          <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 text-white font-bold text-xs">
-            <i class="fa-brands fa-tiktok"></i> Follow TikTok
-          </a>
-        </div>
-        <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-700 text-white font-bold text-xs w-full">
-          <i class="fa-brands fa-facebook"></i> Facebook Biology Community
-        </a>
+      <div id="mobile-social-links" class="pt-3 border-t border-slate-100 space-y-2">
+        <!-- Populated dynamically -->
       </div>
     </div>
   </header>
 
   <main class="flex-1">
 
-    <!-- HERO SECTION & PROFILE OWNER -->
-    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white pt-10 pb-16 lg:py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <!-- SECTION 1: PROFESSIONAL HERO WITH DARAZ-STYLE AUTO-SLIDING STUDENT SHOWCASE & DYNAMIC PROFILE -->
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white pt-6 pb-12 lg:py-12">
+      <!-- Subtle Scientific Grid Background -->
+      <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#10b981 1px, transparent 1px); background-size: 28px 28px;"></div>
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+        
+        <!-- Top Row: Daraz-Style Auto-Changing Student Showcase (Left 8 Cols) + Dynamic Profile Card (Right 4 Cols) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
-          <!-- Profile Card Column -->
-          <div class="lg:col-span-5 flex flex-col items-center text-center lg:text-left lg:items-start">
-            <div class="relative w-full max-w-sm mx-auto lg:mx-0 rounded-2xl bg-slate-900 border border-slate-700 p-6 shadow-2xl">
-              
-              <!-- Avatar Frame -->
-              <div class="relative mb-4 flex justify-center">
-                <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-1 shadow-xl">
-                  <div class="w-full h-full rounded-full bg-slate-900 flex flex-col items-center justify-center text-emerald-400">
-                    <i class="fa-solid fa-user-graduate text-5xl mb-1 text-emerald-300"></i>
-                    <span class="text-[10px] font-mono tracking-widest uppercase font-bold text-emerald-400">P.H.D Scholar</span>
-                  </div>
-                </div>
-                <div class="absolute bottom-1 right-24 sm:right-28 bg-emerald-500 text-white rounded-full p-1.5 shadow-lg border-2 border-slate-900">
-                  <i class="fa-solid fa-circle-check text-base"></i>
-                </div>
-              </div>
-
-              <!-- Details -->
-              <h1 class="text-2xl sm:text-3xl font-extrabold text-white font-display text-center">
-                Kamran Akbar
-              </h1>
-              
-              <div class="mt-1 flex justify-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
-                  <i class="fa-solid fa-award text-emerald-400"></i>
-                  <span>P.H.D Scholar in Biological Sciences</span>
+          <!-- DARAZ-STYLE MAIN AUTO-SLIDING STUDENT BANNER -->
+          <div class="lg:col-span-8 flex flex-col justify-between rounded-3xl bg-slate-900/90 border border-slate-700/80 shadow-2xl overflow-hidden">
+            
+            <!-- Banner Top Strip -->
+            <div class="px-5 py-3 bg-slate-950/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-[11px] font-bold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  LIVE STUDENT GALLERY
                 </span>
+                <span id="gallery-count-badge" class="text-xs text-slate-400 font-semibold">20 Highlights</span>
               </div>
 
-              <p class="mt-3 text-xs text-slate-300 text-center leading-relaxed font-sans">
-                Director & Lead Mentor at <strong class="text-emerald-400">Pariran Academy</strong>. Dedicated to higher-tier conceptual training in BS Level Biology, Cytology, and Pre-Medical Competitions.
-              </p>
-
-              <!-- Social CTAs -->
-              <div class="w-full mt-5 pt-4 border-t border-slate-800 space-y-2.5">
-                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center">
-                  Official Channels & Subscriptions
+              <!-- Speed & Playback Controls -->
+              <div class="flex items-center gap-2">
+                <div class="inline-flex items-center bg-slate-900 rounded-lg border border-slate-700 p-0.5 text-[10px] font-bold">
+                  <button onclick="setSliderSpeed(1000)" id="speed-1000" class="px-2 py-1 rounded text-slate-400 hover:text-white cursor-pointer">1s</button>
+                  <button onclick="setSliderSpeed(1500)" id="speed-1500" class="px-2 py-1 rounded bg-emerald-600 text-white cursor-pointer">1.5s</button>
+                  <button onclick="setSliderSpeed(3000)" id="speed-3000" class="px-2 py-1 rounded text-slate-400 hover:text-white cursor-pointer">3s</button>
                 </div>
+                <button onclick="toggleSliderPlay()" id="slider-play-btn" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-emerald-400 flex items-center justify-center text-xs cursor-pointer" title="Pause / Play">
+                  <i class="fa-solid fa-pause"></i>
+                </button>
+              </div>
+            </div>
 
-                <!-- YouTube CTA Button -->
-                <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white text-xs font-bold shadow-md transition-all">
-                  <div class="flex items-center gap-2.5">
-                    <i class="fa-brands fa-youtube text-lg"></i>
-                    <div class="text-left">
-                      <div class="font-extrabold leading-tight">YouTube Channel</div>
-                      <div class="text-[10px] text-red-200">@PariRan0911</div>
-                    </div>
-                  </div>
-                  <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Subscribe</span>
-                </a>
-
-                <!-- TikTok CTA Button -->
-                <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-gradient-to-r from-zinc-950 to-slate-900 hover:from-zinc-900 hover:to-slate-800 text-white text-xs font-bold border border-slate-700 shadow-md transition-all">
-                  <div class="flex items-center gap-2.5">
-                    <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i>
-                    <div class="text-left">
-                      <div class="font-extrabold leading-tight">TikTok Official</div>
-                      <div class="text-[10px] text-slate-400">@mahparaalain09118</div>
-                    </div>
-                  </div>
-                  <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Follow</span>
-                </a>
-
-                <!-- Facebook CTA Button -->
-                <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-4 py-2 rounded-xl bg-blue-900/40 hover:bg-blue-900/60 text-blue-200 text-xs font-medium border border-blue-800/40 transition-colors">
-                  <div class="flex items-center gap-2">
-                    <i class="fa-brands fa-facebook text-blue-400 text-base"></i>
-                    <span class="text-[11px] truncate">Academy of Biology BS Level</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-up-right-from-square text-xs text-blue-400"></i>
-                </a>
+            <!-- Main Showcase Viewport (Changes every 1s / 1.5s like Daraz) -->
+            <div class="relative h-72 sm:h-96 lg:h-[420px] w-full bg-slate-950 overflow-hidden group">
+              <div id="daraz-main-slide" class="w-full h-full relative">
+                <!-- Active slide injected dynamically -->
               </div>
 
+              <!-- Left / Right Controls -->
+              <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-950/60 hover:bg-emerald-600 text-white backdrop-blur-md border border-white/15 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-all cursor-pointer z-20" aria-label="Previous slide">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-950/60 hover:bg-emerald-600 text-white backdrop-blur-md border border-white/15 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-all cursor-pointer z-20" aria-label="Next slide">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+
+              <!-- Slide Counter Pill -->
+              <div class="absolute top-3 right-3 z-20 px-3 py-1 rounded-full bg-slate-950/75 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-white">
+                <span id="slide-counter-text">01 / 20</span>
+              </div>
+
+              <!-- Daraz-style Progress Bar at bottom of image -->
+              <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/15 z-20">
+                <div id="daraz-progress-bar" class="h-full bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
+              </div>
+            </div>
+
+            <!-- Quick Interactive Dot / Number Strip -->
+            <div id="daraz-dots-bar" class="px-4 py-2.5 bg-slate-950/90 border-t border-slate-800 flex items-center justify-center gap-1.5 overflow-x-auto">
+              <!-- Slide indicator pills -->
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: DYNAMIC ADMIN-CONTROLLED PROFILE CARD -->
+          <div class="lg:col-span-4 flex flex-col">
+            <div id="dynamic-profile-card" class="flex-1 rounded-3xl bg-slate-900/95 border border-slate-700/80 p-6 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+              <!-- Populated dynamically via renderProfileCard() -->
             </div>
           </div>
 
-          <!-- Academy Overview Column -->
-          <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-              <i class="fa-solid fa-microscope"></i>
-              <span>Biological Sciences & University Academic Excellence</span>
+        </div>
+
+        <!-- "AATE JAATE" CONTINUOUS GLIDING 15-20 STUDENT GALLERY MARQUEE STRIP -->
+        <div class="rounded-2xl bg-slate-900/70 border border-slate-800/90 p-3 sm:p-4 shadow-xl overflow-hidden">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap text-emerald-400"></i>
+              <h2 class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">
+                Student Life &amp; Biology Lab Moments
+              </h2>
             </div>
+            <span class="text-[11px] text-slate-400 hidden sm:inline">
+              Hover to pause • Click any photo to view above
+            </span>
+          </div>
 
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-display leading-tight">
-              Master University Biology with <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Pariran Academy</span>
-            </h2>
-
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Kamran Akbar is a distinguished P.H.D Scholar in Biological Sciences, author, and researcher with over a decade of teaching excellence. Pariran Academy was established to democratize high-level academic concepts through direct conceptual lectures, comprehensive notes, and rigorous timed assessments for BS Level, University, and Pre-Medical students.
-            </p>
-
-            <blockquote class="border-l-4 border-emerald-500 pl-4 py-2 text-slate-300 italic text-sm bg-slate-800/50 rounded-r-xl">
-              &ldquo;True scientific learning comes from conceptual understanding, consistent practice, and disciplined self-assessment.&rdquo;
-              <footer class="text-emerald-400 text-xs font-semibold not-italic mt-1">
-                — Kamran Akbar (P.H.D Scholar), Founder of Pariran Academy
-              </footer>
-            </blockquote>
-
-            <!-- Quick Action Hub Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <a href="#notes-section" class="p-5 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 transition-all shadow-lg block group">
-                <div class="flex items-start justify-between">
-                  <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3 border border-amber-500/30">
-                    <i class="fa-solid fa-book-open"></i>
-                  </div>
-                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase">
-                    Strict Online Read
-                  </span>
-                </div>
-                <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
-                  Online Notes Viewer
-                </h3>
-                <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
-                  Read directly on the webpage. Protected curriculum notes for Cytology, Genetics, Plant Sciences, and Physiology.
-                </p>
-                <div class="mt-3 flex items-center text-xs font-bold text-emerald-400 gap-1">
-                  <span>Open Notes Reader</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                </div>
-              </a>
-
-              <a href="#test-section" class="p-5 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-teal-500/50 transition-all shadow-lg block group">
-                <div class="flex items-start justify-between">
-                  <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3 border border-teal-500/30">
-                    <i class="fa-solid fa-stopwatch"></i>
-                  </div>
-                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 uppercase">
-                    Timed Assessment
-                  </span>
-                </div>
-                <h3 class="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">
-                  Interactive Online Tests
-                </h3>
-                <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
-                  10-minute countdown assessments, automatic submission, instant marks calculation, and detailed explanations.
-                </p>
-                <div class="mt-3 flex items-center text-xs font-bold text-teal-400 gap-1">
-                  <span>Take a Timed Test</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                </div>
-              </a>
+          <div class="marquee-wrapper overflow-hidden relative">
+            <div id="student-marquee-track" class="marquee-track gap-3">
+              <!-- Duplicated items for seamless infinite incoming/outgoing scroll -->
             </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800">
-              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
-                <div class="text-2xl font-extrabold text-white font-display">15,000+</div>
-                <div class="text-[11px] text-slate-400 font-medium">Students Mentored</div>
-              </div>
-              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
-                <div class="text-2xl font-extrabold text-white font-display">120+</div>
-                <div class="text-[11px] text-slate-400 font-medium">Topic Notes</div>
-              </div>
-              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
-                <div class="text-2xl font-extrabold text-white font-display">50+</div>
-                <div class="text-[11px] text-slate-400 font-medium">Timed Test Sets</div>
-              </div>
-              <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-center">
-                <div class="text-2xl font-extrabold text-white font-display">98.4%</div>
-                <div class="text-[11px] text-slate-400 font-medium">Success Ratio</div>
-              </div>
-            </div>
-
           </div>
         </div>
+
+        <!-- QUICK LEARNING HUB CARDS (NOTES & TIMED TESTS) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <a href="#notes-section" class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/90 to-slate-900 border border-slate-700 hover:border-amber-500/60 transition-all shadow-lg flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30 shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-book-open text-xl"></i>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white group-hover:text-amber-300 transition-colors font-display">
+                  Online Notes Viewer
+                </h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase">
+                  Strict Online Read
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                Read high-yield PHD Biology &amp; Science notes directly on screen with adjustable fonts and Dark/Sepia reading themes.
+              </p>
+              <div class="mt-3 inline-flex items-center text-xs font-bold text-amber-400 gap-1.5">
+                <span>Open Notes Reader</span> <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </a>
+
+          <a href="#test-section" class="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/90 to-slate-900 border border-slate-700 hover:border-emerald-500/60 transition-all shadow-lg flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30 shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-stopwatch text-xl"></i>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors font-display">
+                  Interactive Timed Online Tests
+                </h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase">
+                  Auto-Submit MCQ
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                Practice with countdown timers, question review flags, instant dynamic marks calculation, and step-by-step explanations.
+              </p>
+              <div class="mt-3 inline-flex items-center text-xs font-bold text-emerald-400 gap-1.5">
+                <span>Start Timed Test</span> <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+
       </div>
     </section>
 
@@ -369,10 +348,10 @@
               <span>STRICT: ONLINE VIEWER ONLY (NO DOWNLOAD OPTION)</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
-              Curriculum Notes & Lecture Transcripts
+              Curriculum Notes &amp; Lecture Transcripts
             </h2>
             <p class="text-sm text-slate-600 mt-1.5 max-w-2xl">
-              High-yield academic notes compiled by Kamran Akbar (P.H.D Scholar). Optimized for instant, distraction-free reading directly inside your browser.
+              Structured academic notes optimized for instant, distraction-free reading directly inside your browser.
             </p>
           </div>
 
@@ -380,8 +359,8 @@
           <div class="bg-amber-50 border border-amber-300 rounded-xl p-3 flex items-start gap-3 max-w-md shadow-xs">
             <i class="fa-solid fa-circle-info text-amber-700 text-lg mt-0.5"></i>
             <div class="text-xs text-amber-900 leading-snug">
-              <strong class="font-bold">Intellectual Property Notice:</strong>
-              PDF download and offline exporting are permanently disabled. Notes are for registered students to study directly on this webpage.
+              <strong class="font-bold">Online Study Notice:</strong>
+              PDF download and offline exporting are permanently disabled. Notes are for studying directly on this webpage.
             </div>
           </div>
         </div>
@@ -417,12 +396,9 @@
     <!-- SECTION 3: INTERACTIVE TIMED ONLINE TEST SYSTEM -->
     <section id="test-section" class="py-14 sm:py-20 bg-slate-50 border-t border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Test App Container -->
         <div id="test-system-container">
           <!-- Dynamically rendered: Catalog, Active Test, or Score Report -->
         </div>
-
       </div>
     </section>
 
@@ -438,22 +414,14 @@
           </div>
           <div>
             <div class="text-white font-bold text-base font-display">Pariran Academy</div>
-            <div class="text-slate-400 text-xs">
-              Founded by Kamran Akbar <span class="text-emerald-400 font-semibold">(P.H.D Scholar)</span>
+            <div id="footer-director-subtitle" class="text-slate-400 text-xs">
+              Online Biological Sciences Learning Platform
             </div>
           </div>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-3">
-          <a href="https://www.youtube.com/@PariRan0911" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-red-600/10 hover:bg-red-600/20 text-red-400 border border-red-500/20 font-semibold">
-            <i class="fa-brands fa-youtube text-base"></i> <span>YouTube @PariRan0911</span>
-          </a>
-          <a href="https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold">
-            <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i> <span>TikTok @mahparaalain09118</span>
-          </a>
-          <a href="https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/20 font-semibold">
-            <i class="fa-brands fa-facebook text-base"></i> <span>Facebook Community</span>
-          </a>
+        <div id="footer-socials" class="flex flex-wrap items-center justify-center gap-3">
+          <!-- Populated dynamically -->
         </div>
       </div>
     </div>
@@ -465,7 +433,7 @@
             <i class="fa-solid fa-shield-halved text-emerald-400 mr-1.5"></i> Protected Online Learning
           </div>
           <p class="text-slate-400 text-xs leading-relaxed max-w-lg">
-            Pariran Academy is an academic institution dedicated to higher secondary and university-level biological sciences. Under the mentorship of Kamran Akbar (P.H.D Scholar), students access online notes, timed assessments, and video lectures.
+            Pariran Academy provides structured PHD biological sciences notes, interactive timed online tests, and engaging academic visuals for students.
           </p>
           <p class="text-[11px] text-amber-400">
             Strict Note Policy: Direct on-screen browser study only. PDF downloads are permanently disabled.
@@ -475,32 +443,32 @@
         <div>
           <div class="text-white font-bold text-xs tracking-wider uppercase mb-2">Navigation</div>
           <ul class="space-y-2 text-xs">
-            <li><a href="#hero" class="hover:text-emerald-400">About Founder</a></li>
+            <li><a href="#hero" class="hover:text-emerald-400">Campus Showcase &amp; Profile</a></li>
             <li><a href="#notes-section" class="hover:text-emerald-400">Online Notes (Read Only)</a></li>
             <li><a href="#test-section" class="hover:text-emerald-400">Timed Online Tests</a></li>
-            <li><button onclick="openAdminModal()" class="hover:text-emerald-400 underline">Admin Portal</button></li>
+            <li><button onclick="openAdminModal()" class="hover:text-emerald-400 underline cursor-pointer">Admin Portal</button></li>
           </ul>
         </div>
 
         <div>
-          <div class="text-white font-bold text-xs tracking-wider uppercase mb-2">Curricula</div>
+          <div class="text-white font-bold text-xs tracking-wider uppercase mb-2">Disciplines</div>
           <ul class="space-y-1.5 text-slate-400 text-xs">
-            <li>• BS Level Cell Biology & Cytology</li>
-            <li>• Molecular Genetics & Enzymology</li>
-            <li>• Human Physiology & Neurobiology</li>
-            <li>• Plant Sciences & Photosynthesis</li>
-            <li>• MDCAT Biology Rapid Prep</li>
+            <li>• PHD Cell Biology &amp; Cytology</li>
+            <li>• Molecular Genetics &amp; Enzymology</li>
+            <li>• Human Physiology &amp; Neurobiology</li>
+            <li>• Plant Sciences &amp; Photosynthesis</li>
+            <li>• Pre-Medical Rapid Assessments</li>
           </ul>
         </div>
       </div>
 
       <div class="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
         <div>
-          &copy; <span id="current-year"></span> Pariran Academy. All Rights Reserved. Director: Kamran Akbar (P.H.D Scholar).
+          &copy; <span id="current-year"></span> Pariran Academy. All Rights Reserved.
         </div>
         <div class="flex items-center gap-3">
           <span>Online Biological Education</span>
-          <button onclick="openAdminModal()" class="hover:text-slate-300 underline">Admin Portal</button>
+          <button onclick="openAdminModal()" class="hover:text-slate-300 underline cursor-pointer">Admin Portal</button>
         </div>
       </div>
     </div>
@@ -521,20 +489,20 @@
         <div class="flex items-center gap-3">
           <!-- Font size toggles -->
           <div class="flex items-center rounded-lg border border-slate-300 p-0.5 text-xs font-bold">
-            <button onclick="setReaderFontSize('sm')" id="btn-font-sm" class="px-2 py-0.5 rounded">A-</button>
-            <button onclick="setReaderFontSize('base')" id="btn-font-base" class="px-2 py-0.5 rounded bg-emerald-600 text-white">A</button>
-            <button onclick="setReaderFontSize('lg')" id="btn-font-lg" class="px-2 py-0.5 rounded">A+</button>
+            <button onclick="setReaderFontSize('sm')" id="btn-font-sm" class="px-2 py-0.5 rounded cursor-pointer">A-</button>
+            <button onclick="setReaderFontSize('base')" id="btn-font-base" class="px-2 py-0.5 rounded bg-emerald-600 text-white cursor-pointer">A</button>
+            <button onclick="setReaderFontSize('lg')" id="btn-font-lg" class="px-2 py-0.5 rounded cursor-pointer">A+</button>
           </div>
 
           <!-- Color theme toggles -->
           <div class="flex items-center gap-1.5">
-            <button onclick="setReaderTheme('light')" class="w-5 h-5 rounded-full border border-slate-300 bg-white ring-1 ring-slate-400" title="Light theme"></button>
-            <button onclick="setReaderTheme('sepia')" class="w-5 h-5 rounded-full border border-[#ebdccb] bg-[#fcf8f2]" title="Warm Sepia theme"></button>
-            <button onclick="setReaderTheme('dark')" class="w-5 h-5 rounded-full border border-slate-700 bg-slate-900" title="Dark theme"></button>
+            <button onclick="setReaderTheme('light')" class="w-5 h-5 rounded-full border border-slate-300 bg-white ring-1 ring-slate-400 cursor-pointer" title="Light theme"></button>
+            <button onclick="setReaderTheme('sepia')" class="w-5 h-5 rounded-full border border-[#ebdccb] bg-[#fcf8f2] cursor-pointer" title="Warm Sepia theme"></button>
+            <button onclick="setReaderTheme('dark')" class="w-5 h-5 rounded-full border border-slate-700 bg-slate-900 cursor-pointer" title="Dark theme"></button>
           </div>
 
           <!-- Close button -->
-          <button onclick="closeNotesReader()" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+          <button onclick="closeNotesReader()" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors cursor-pointer">
             <i class="fa-solid fa-xmark text-lg"></i>
           </button>
         </div>
@@ -556,9 +524,9 @@
     </div>
   </div>
 
-  <!-- SECURE ADMIN PANEL MODAL (TEST & NOTES UPLOAD) -->
+  <!-- SECURE ADMIN PANEL MODAL -->
   <div id="admin-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+    <div class="bg-white rounded-3xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
       
       <!-- Admin Top Header -->
       <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
@@ -568,21 +536,21 @@
           </div>
           <div>
             <h3 class="text-base font-bold font-display">Pariran Academy Administration Console</h3>
-            <p class="text-[11px] text-slate-400">Kamran Akbar (P.H.D Scholar) • Secure Management</p>
+            <p class="text-[11px] text-slate-400">Profile, Gallery, Tests &amp; Online Notes Management</p>
           </div>
         </div>
 
         <div class="flex items-center gap-2">
-          <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold">
+          <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold cursor-pointer">
             <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span>
           </button>
-          <button onclick="closeAdminModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <button onclick="closeAdminModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer">
             <i class="fa-solid fa-xmark text-lg"></i>
           </button>
         </div>
       </div>
 
-      <!-- Admin Body Container (Auth Screen vs Management Workspace) -->
+      <!-- Admin Body Container -->
       <div id="admin-modal-body" class="flex-1 overflow-hidden flex flex-col">
         <!-- Dynamically rendered -->
       </div>
@@ -593,14 +561,62 @@
   <!-- JAVASCRIPT LOGIC & APPLICATION ENGINE -->
   <script>
     // -------------------------------------------------------------
-    // DATA LAYER & DEFAULT SAMPLE DATA
+    // 1. DEFAULT PROFILE (CLEAN — NO HARDCODED BIO/QUALIFICATION)
+    //    Kamran sets all his own info, taleem, qualification & photo in Admin Panel
+    // -------------------------------------------------------------
+    const DEFAULT_PROFILE = {
+      name: 'Kamran Akbar',
+      qualification: '',
+      education: '',
+      experience: '',
+      bio: '',
+      quote: '',
+      photo: '',
+      stat1Value: '', stat1Label: '',
+      stat2Value: '', stat2Label: '',
+      youtubeUrl: 'https://www.youtube.com/@PariRan0911',
+      youtubeHandle: '@PariRan0911',
+      tiktokUrl: 'https://www.tiktok.com/@mahparaalain09118?_r=1&_t=ZS-94vhtFX40BR',
+      tiktokHandle: '@mahparaalain09118',
+      facebookUrl: 'https://www.facebook.com/kamran.akbar.academy.of.bioloby.bs.level',
+      facebookLabel: 'Academy of Biology PHD'
+    };
+
+    // -------------------------------------------------------------
+    // 2. DEFAULT 20 ENGAGING STUDENT & ACADEMY PHOTOS FOR DARAZ SLIDER
+    // -------------------------------------------------------------
+    const DEFAULT_GALLERY = [
+      { id: 'img-1', url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80', title: 'Collaborative Study Squad', tag: 'Group Study' },
+      { id: 'img-2', url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80', title: 'Peer Learning & Concept Discussions', tag: 'Teamwork' },
+      { id: 'img-3', url: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80', title: 'Modern Biology Lab Practicals', tag: 'Science Lab' },
+      { id: 'img-4', url: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80', title: 'Cellular Microscopy Exploration', tag: 'Microscopy' },
+      { id: 'img-5', url: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80', title: 'University Campus Energy', tag: 'Campus Life' },
+      { id: 'img-6', url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80', title: 'Future Scholars & Achievers', tag: 'Graduation' },
+      { id: 'img-7', url: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80', title: 'Focused Exam & Notes Preparation', tag: 'Exam Prep' },
+      { id: 'img-8', url: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1200&q=80', title: 'Biotechnology & Lab Analysis', tag: 'Research' },
+      { id: 'img-9', url: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1200&q=80', title: 'Molecular Pipetting & Assays', tag: 'Genetics Lab' },
+      { id: 'img-10', url: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80', title: 'Hands-On Biology Experiments', tag: 'Practical' },
+      { id: 'img-11', url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80', title: 'Interactive Classroom Sessions', tag: 'Lectures' },
+      { id: 'img-12', url: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80', title: 'Deep Library & Textbook Reading', tag: 'Library' },
+      { id: 'img-13', url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80', title: 'Engaging Academic Seminars', tag: 'Workshops' },
+      { id: 'img-14', url: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80', title: 'Digital Learning & Online Tests', tag: 'E-Learning' },
+      { id: 'img-15', url: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80', title: 'Medical & Pre-Med Diagnostics', tag: 'Pre-Med' },
+      { id: 'img-16', url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80', title: 'Scientific Innovation & Tech', tag: 'BioTech' },
+      { id: 'img-17', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80', title: 'Academic Excellence Study Desk', tag: 'Study Hub' },
+      { id: 'img-18', url: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80', title: 'Celebrating Student Milestones', tag: 'Achievements' },
+      { id: 'img-19', url: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=80', title: 'University Library Research', tag: 'PHD' },
+      { id: 'img-20', url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80', title: 'Collaborative Digital Assessments', tag: 'Tech Study' }
+    ];
+
+    // -------------------------------------------------------------
+    // 3. DEFAULT CURRICULUM NOTES & TIMED TESTS
     // -------------------------------------------------------------
     const DEFAULT_NOTES = [
       {
         id: 'note-1',
         title: 'Ultra-Structure and Functions of Cell Membrane (Fluid Mosaic Model)',
         category: 'Cell Biology',
-        topic: 'Membrane Transport & Biophysics (BS Level)',
+        topic: 'Membrane Transport & Biophysics (PHD)',
         readTime: '7 min read',
         overview: 'A deep examination of the Singer-Nicolson Fluid Mosaic model, lipid bilayer dynamics, integral and peripheral proteins, and active vs passive transport mechanisms across biological membranes.',
         sections: [
@@ -642,7 +658,7 @@
         id: 'note-2',
         title: 'DNA Replication, Fork Enzymology & Proofreading in Eukaryotes',
         category: 'Molecular Genetics',
-        topic: 'Chromosomal Biology & Replication (BS Level)',
+        topic: 'Chromosomal Biology & Replication (PHD)',
         readTime: '9 min read',
         overview: 'Comprehensive conceptual notes on the eukaryotic replication fork, origin recognition complexes, DNA polymerases (alpha, delta, epsilon), and high-fidelity proofreading.',
         sections: [
@@ -683,7 +699,7 @@
         id: 'note-3',
         title: 'Action Potential Generation & Synaptic Neurotransmission',
         category: 'Human Physiology',
-        topic: 'Neurophysiology & Excitable Membranes (BS Level)',
+        topic: 'Neurophysiology & Excitable Membranes (PHD)',
         readTime: '8 min read',
         overview: 'Principles of neuronal resting membrane potential (-70 mV), voltage-gated ion channels, action potential phases, and chemical synapse vesicle fusion.',
         sections: [
@@ -716,9 +732,9 @@
     const DEFAULT_TESTS = [
       {
         id: 'test-1',
-        title: 'BS Level Biology Grand Comprehensive Assessment',
+        title: 'PHD Biology Grand Comprehensive Assessment',
         category: 'Biological Sciences',
-        description: 'Timed assessment covering Cell Biology, Bioenergetics, Genetics, and Animal Physiology designed by Kamran Akbar (P.H.D Scholar).',
+        description: 'Timed assessment covering Cell Biology, Bioenergetics, Genetics, and Animal Physiology.',
         timeLimitMinutes: 10,
         questions: [
           {
@@ -830,15 +846,41 @@
       }
     ];
 
-    // Initialize state from localStorage or defaults
+    // -------------------------------------------------------------
+    // STORAGE HELPERS
+    // -------------------------------------------------------------
+    function getStoredProfile() {
+      try {
+        const saved = localStorage.getItem('pariran_profile');
+        if (saved) return { ...DEFAULT_PROFILE, ...JSON.parse(saved) };
+      } catch (e) {}
+      return { ...DEFAULT_PROFILE };
+    }
+    function saveProfile(p) {
+      localStorage.setItem('pariran_profile', JSON.stringify(p));
+    }
+
+    function getStoredGallery() {
+      try {
+        const saved = localStorage.getItem('pariran_gallery');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {}
+      return [...DEFAULT_GALLERY];
+    }
+    function saveGallery(g) {
+      localStorage.setItem('pariran_gallery', JSON.stringify(g));
+    }
+
     function getStoredNotes() {
       try {
         const saved = localStorage.getItem('pariran_notes');
         if (saved) return JSON.parse(saved);
       } catch (e) {}
-      return DEFAULT_NOTES;
+      return [...DEFAULT_NOTES];
     }
-
     function saveNotes(notes) {
       localStorage.setItem('pariran_notes', JSON.stringify(notes));
     }
@@ -848,19 +890,58 @@
         const saved = localStorage.getItem('pariran_tests');
         if (saved) return JSON.parse(saved);
       } catch (e) {}
-      return DEFAULT_TESTS;
+      return [...DEFAULT_TESTS];
     }
-
     function saveTests(tests) {
       localStorage.setItem('pariran_tests', JSON.stringify(tests));
     }
 
+    let profileData = getStoredProfile();
+    let galleryImages = getStoredGallery();
     let allNotes = getStoredNotes();
     let allTests = getStoredTests();
     let selectedCategory = 'All';
 
+    // Escape HTML helper for safe rendering
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Client-side image compression for File Uploads (prevents localStorage overflow)
+    function compressImageFile(file, maxWidth = 900, quality = 0.8) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            let w = img.width;
+            let h = img.height;
+            if (w > maxWidth) {
+              h = Math.round((h * maxWidth) / w);
+              w = maxWidth;
+            }
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+            resolve(canvas.toDataURL('image/jpeg', quality));
+          };
+          img.onerror = reject;
+          img.src = event.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
     // -------------------------------------------------------------
-    // AUDIO SYNTHESIZER (Pure Web Audio API, Zero External Files)
+    // AUDIO SYNTHESIZER (Web Audio API)
     // -------------------------------------------------------------
     function playAudioTone(type) {
       try {
@@ -872,16 +953,16 @@
           const gain = ctx.createGain();
           osc.type = 'sine';
           osc.frequency.setValueAtTime(800, ctx.currentTime);
-          gain.gain.setValueAtTime(0.1, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+          gain.gain.setValueAtTime(0.08, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
           osc.connect(gain); gain.connect(ctx.destination);
-          osc.start(); osc.stop(ctx.currentTime + 0.1);
+          osc.start(); osc.stop(ctx.currentTime + 0.08);
         } else if (type === 'warning') {
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = 'triangle';
           osc.frequency.setValueAtTime(450, ctx.currentTime);
-          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.setValueAtTime(0.18, ctx.currentTime);
           gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
           osc.connect(gain); gain.connect(ctx.destination);
           osc.start(); osc.stop(ctx.currentTime + 0.25);
@@ -902,11 +983,364 @@
     }
 
     // -------------------------------------------------------------
-    // NAVIGATION & MOBILE MENU
+    // NAVIGATION & DYNAMIC PROFILE RENDERING
     // -------------------------------------------------------------
     function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function renderProfileEverywhere() {
+      const p = profileData;
+
+      // Topbar & Header Director Subtitle (only if qualification/name configured)
+      const topSocials = document.getElementById('topbar-socials');
+      topSocials.innerHTML = `
+        <span class="hidden md:inline text-slate-400">Official Channels:</span>
+        <a href="${escapeHtml(p.youtubeUrl)}" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors font-semibold flex items-center gap-1">
+          <i class="fa-brands fa-youtube text-red-500 text-sm"></i> <span>YouTube</span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <a href="${escapeHtml(p.tiktokUrl)}" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors font-semibold flex items-center gap-1">
+          <i class="fa-brands fa-tiktok text-sm"></i> <span>TikTok</span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <a href="${escapeHtml(p.facebookUrl)}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors font-semibold flex items-center gap-1">
+          <i class="fa-brands fa-facebook text-blue-400 text-sm"></i> <span class="hidden sm:inline">Facebook</span>
+        </a>
+      `;
+
+      const headerYt = document.getElementById('header-yt-cta');
+      if (headerYt) headerYt.href = p.youtubeUrl;
+
+      const dirLine = document.getElementById('header-director-line');
+      if (dirLine) {
+        if (p.name && p.qualification) {
+          dirLine.innerHTML = `${escapeHtml(p.name)} <span class="text-emerald-700 font-semibold">(${escapeHtml(p.qualification)})</span>`;
+        } else if (p.name) {
+          dirLine.innerHTML = `${escapeHtml(p.name)} • Pariran Academy`;
+        } else {
+          dirLine.innerHTML = `Biological Sciences Learning Hub`;
+        }
+      }
+
+      // Mobile Socials
+      const mobSoc = document.getElementById('mobile-social-links');
+      if (mobSoc) {
+        mobSoc.innerHTML = `
+          <div class="grid grid-cols-2 gap-2">
+            <a href="${escapeHtml(p.youtubeUrl)}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-red-600 text-white font-bold text-xs">
+              <i class="fa-brands fa-youtube"></i> Subscribe YT
+            </a>
+            <a href="${escapeHtml(p.tiktokUrl)}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 text-white font-bold text-xs">
+              <i class="fa-brands fa-tiktok"></i> Follow TikTok
+            </a>
+          </div>
+          <a href="${escapeHtml(p.facebookUrl)}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-700 text-white font-bold text-xs w-full">
+            <i class="fa-brands fa-facebook"></i> ${escapeHtml(p.facebookLabel || 'Facebook Community')}
+          </a>
+        `;
+      }
+
+      // Footer Socials & Subtitle
+      const footerSub = document.getElementById('footer-director-subtitle');
+      if (footerSub) {
+        footerSub.innerHTML = p.name
+          ? `${escapeHtml(p.name)}${p.qualification ? ` <span class="text-emerald-400 font-semibold">(${escapeHtml(p.qualification)})</span>` : ''}`
+          : 'Online Biological Sciences Learning Platform';
+      }
+
+      const footerSoc = document.getElementById('footer-socials');
+      if (footerSoc) {
+        footerSoc.innerHTML = `
+          <a href="${escapeHtml(p.youtubeUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-red-600/10 hover:bg-red-600/20 text-red-400 border border-red-500/20 font-semibold">
+            <i class="fa-brands fa-youtube text-base"></i> <span>YouTube ${escapeHtml(p.youtubeHandle)}</span>
+          </a>
+          <a href="${escapeHtml(p.tiktokUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold">
+            <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i> <span>TikTok ${escapeHtml(p.tiktokHandle)}</span>
+          </a>
+          <a href="${escapeHtml(p.facebookUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/20 font-semibold">
+            <i class="fa-brands fa-facebook text-base"></i> <span>Facebook Community</span>
+          </a>
+        `;
+      }
+
+      // Main Dynamic Profile Card (Zero hardcoded bio/qualification unless Admin fills them!)
+      const card = document.getElementById('dynamic-profile-card');
+      const hasCustomDetails = Boolean(p.qualification || p.education || p.experience || p.bio || p.quote);
+      const hasStats = Boolean((p.stat1Value && p.stat1Label) || (p.stat2Value && p.stat2Label));
+
+      card.innerHTML = `
+        <div class="space-y-4">
+          <!-- Avatar / Admin Uploaded Photo -->
+          <div class="flex flex-col items-center text-center">
+            <div class="relative mb-3">
+              <div class="w-32 h-32 rounded-full bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-1 shadow-xl">
+                <div class="w-full h-full rounded-full bg-slate-950 overflow-hidden flex items-center justify-center">
+                  ${p.photo
+                    ? `<img src="${p.photo}" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover">`
+                    : `<div class="flex flex-col items-center justify-center text-emerald-400">
+                         <i class="fa-solid fa-user-tie text-5xl text-emerald-300/90"></i>
+                       </div>`
+                  }
+                </div>
+              </div>
+              <button onclick="openAdminModal('profile')" title="Edit Profile & Upload Photo in Admin Panel" class="absolute bottom-1 right-1 w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-lg border-2 border-slate-900 cursor-pointer transition-transform hover:scale-110">
+                <i class="fa-solid fa-camera text-xs"></i>
+              </button>
+            </div>
+
+            <h1 class="text-2xl font-extrabold text-white font-display tracking-tight">
+              ${escapeHtml(p.name || 'Pariran Academy')}
+            </h1>
+
+            ${p.qualification ? `
+              <div class="mt-1.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
+                <i class="fa-solid fa-award text-emerald-400"></i>
+                <span>${escapeHtml(p.qualification)}</span>
+              </div>
+            ` : ''}
+
+            ${p.education ? `
+              <div class="mt-2.5 w-full text-left bg-slate-950/70 border border-slate-800 rounded-xl px-3.5 py-2.5">
+                <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 mb-0.5">
+                  <i class="fa-solid fa-graduation-cap mr-1"></i> Education / Taleem
+                </div>
+                <div class="text-xs text-slate-200 font-medium leading-snug">${escapeHtml(p.education)}</div>
+              </div>
+            ` : ''}
+
+            ${p.experience ? `
+              <div class="mt-2 w-full text-left bg-slate-950/70 border border-slate-800 rounded-xl px-3.5 py-2">
+                <div class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 mb-0.5">
+                  <i class="fa-solid fa-briefcase mr-1"></i> Experience / Specialization
+                </div>
+                <div class="text-xs text-slate-200 font-medium leading-snug">${escapeHtml(p.experience)}</div>
+              </div>
+            ` : ''}
+
+            ${p.bio ? `
+              <p class="mt-3 text-xs text-slate-300 leading-relaxed text-left bg-slate-800/40 p-3 rounded-xl border border-slate-800 w-full">
+                ${escapeHtml(p.bio)}
+              </p>
+            ` : ''}
+
+            ${p.quote ? `
+              <blockquote class="mt-2 w-full text-left border-l-2 border-emerald-500 pl-3 py-1 text-[11px] italic text-slate-300">
+                &ldquo;${escapeHtml(p.quote)}&rdquo;
+              </blockquote>
+            ` : ''}
+
+            ${!hasCustomDetails ? `
+              <div class="mt-3 w-full p-3 rounded-xl bg-slate-950/60 border border-dashed border-slate-700 text-center space-y-1.5">
+                <p class="text-[11px] text-slate-400">
+                  Admin can add Photo, Qualification, Taleem &amp; Bio from Admin Panel.
+                </p>
+                <button onclick="openAdminModal('profile')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 text-[11px] font-bold cursor-pointer">
+                  <i class="fa-solid fa-pen-to-square"></i> Set Profile &amp; Photo
+                </button>
+              </div>
+            ` : ''}
+
+            ${hasStats ? `
+              <div class="mt-3 grid grid-cols-2 gap-2 w-full">
+                ${p.stat1Value && p.stat1Label ? `
+                  <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-2 text-center">
+                    <div class="text-base font-extrabold text-emerald-400 font-display">${escapeHtml(p.stat1Value)}</div>
+                    <div class="text-[10px] text-slate-400">${escapeHtml(p.stat1Label)}</div>
+                  </div>
+                ` : ''}
+                ${p.stat2Value && p.stat2Label ? `
+                  <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-2 text-center">
+                    <div class="text-base font-extrabold text-cyan-400 font-display">${escapeHtml(p.stat2Value)}</div>
+                    <div class="text-[10px] text-slate-400">${escapeHtml(p.stat2Label)}</div>
+                  </div>
+                ` : ''}
+              </div>
+            ` : ''}
+          </div>
+        </div>
+
+        <!-- Official Social Media CTA Buttons -->
+        <div class="w-full mt-5 pt-4 border-t border-slate-800 space-y-2">
+          <a href="${escapeHtml(p.youtubeUrl)}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-3.5 py-2 rounded-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white text-xs font-bold shadow-md transition-all">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-brands fa-youtube text-base"></i>
+              <div class="text-left">
+                <div class="font-extrabold leading-tight">YouTube</div>
+                <div class="text-[10px] text-red-200">${escapeHtml(p.youtubeHandle)}</div>
+              </div>
+            </div>
+            <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Subscribe</span>
+          </a>
+
+          <a href="${escapeHtml(p.tiktokUrl)}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-3.5 py-2 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white text-xs font-bold border border-slate-700 shadow-md transition-all">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-brands fa-tiktok text-cyan-400 text-sm"></i>
+              <div class="text-left">
+                <div class="font-extrabold leading-tight">TikTok</div>
+                <div class="text-[10px] text-slate-400">${escapeHtml(p.tiktokHandle)}</div>
+              </div>
+            </div>
+            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Follow</span>
+          </a>
+
+          <a href="${escapeHtml(p.facebookUrl)}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between px-3.5 py-2 rounded-xl bg-blue-900/40 hover:bg-blue-900/60 text-blue-200 text-xs font-medium border border-blue-800/40 transition-colors">
+            <div class="flex items-center gap-2 truncate">
+              <i class="fa-brands fa-facebook text-blue-400 text-sm"></i>
+              <span class="text-[11px] truncate">${escapeHtml(p.facebookLabel || 'Facebook Community')}</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-blue-400 shrink-0"></i>
+          </a>
+        </div>
+      `;
+    }
+
+    // -------------------------------------------------------------
+    // DARAZ-STYLE AUTO-SLIDING SHOWCASE & 20-PHOTO MARQUEE
+    // -------------------------------------------------------------
+    let currentSlideIndex = 0;
+    let sliderSpeedMs = 1500; // Fast Daraz-like automatic switching (1.5s default, toggleable to 1s / 3s)
+    let isSliderPlaying = true;
+    let sliderTimer = null;
+
+    function renderDarazShowcase() {
+      if (!galleryImages || galleryImages.length === 0) return;
+      if (currentSlideIndex >= galleryImages.length) currentSlideIndex = 0;
+
+      const item = galleryImages[currentSlideIndex];
+      const mainSlideEl = document.getElementById('daraz-main-slide');
+      const countBadge = document.getElementById('gallery-count-badge');
+      const counterText = document.getElementById('slide-counter-text');
+      const dotsBar = document.getElementById('daraz-dots-bar');
+
+      if (countBadge) countBadge.innerText = `${galleryImages.length} Student Highlights`;
+      if (counterText) {
+        counterText.innerText = `${String(currentSlideIndex + 1).padStart(2, '0')} / ${String(galleryImages.length).padStart(2, '0')}`;
+      }
+
+      mainSlideEl.innerHTML = `
+        <img src="${escapeHtml(item.url)}" alt="${escapeHtml(item.title)}" class="w-full h-full object-cover banner-fade-in">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 flex flex-col sm:flex-row sm:items-end justify-between gap-3 z-10">
+          <div>
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-extrabold uppercase tracking-wider mb-1.5 shadow-md">
+              ${escapeHtml(item.tag || 'Campus Life')}
+            </span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display drop-shadow-md">
+              ${escapeHtml(item.title)}
+            </h2>
+          </div>
+          <div class="text-[11px] text-slate-300 font-medium bg-slate-950/60 backdrop-blur-xs px-3 py-1 rounded-full border border-white/10 self-start sm:self-auto">
+            Pariran Academy Student Life
+          </div>
+        </div>
+      `;
+
+      // Restart smooth progress bar animation
+      const progBar = document.getElementById('daraz-progress-bar');
+      if (progBar) {
+        progBar.style.animation = 'none';
+        void progBar.offsetWidth; // force reflow
+        if (isSliderPlaying) {
+          progBar.style.animation = `progressFill ${sliderSpeedMs}ms linear forwards`;
+        } else {
+          progBar.style.width = '0%';
+        }
+      }
+
+      // Render indicator pills
+      if (dotsBar) {
+        dotsBar.innerHTML = galleryImages.map((g, idx) => `
+          <button onclick="jumpToSlide(${idx})" title="${escapeHtml(g.title)}" class="h-1.5 rounded-full transition-all cursor-pointer ${
+            idx === currentSlideIndex ? 'w-7 bg-emerald-400' : 'w-2 bg-slate-700 hover:bg-slate-500'
+          }"></button>
+        `).join('');
+      }
+    }
+
+    function renderStudentMarquee() {
+      const track = document.getElementById('student-marquee-track');
+      if (!track || galleryImages.length === 0) return;
+
+      // Render 2x for smooth seamless infinite loop (incoming & outgoing)
+      const combined = [...galleryImages, ...galleryImages];
+      track.innerHTML = combined.map((img, i) => {
+        const realIdx = i % galleryImages.length;
+        return `
+          <div onclick="jumpToSlide(${realIdx})" class="w-40 sm:w-44 shrink-0 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 hover:border-emerald-400 transition-all cursor-pointer group shadow-md">
+            <div class="h-24 w-full overflow-hidden relative">
+              <img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-slate-950/75 text-emerald-300 text-[9px] font-bold uppercase">
+                ${escapeHtml(img.tag || 'Student')}
+              </span>
+            </div>
+            <div class="p-2">
+              <p class="text-[11px] font-bold text-slate-200 truncate group-hover:text-emerald-400">
+                ${escapeHtml(img.title)}
+              </p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function startSliderTimer() {
+      if (sliderTimer) clearInterval(sliderTimer);
+      if (!isSliderPlaying) return;
+      sliderTimer = setInterval(() => {
+        currentSlideIndex = (currentSlideIndex + 1) % galleryImages.length;
+        renderDarazShowcase();
+      }, sliderSpeedMs);
+    }
+
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % galleryImages.length;
+      renderDarazShowcase();
+      startSliderTimer();
+    }
+
+    function prevSlide() {
+      currentSlideIndex = (currentSlideIndex - 1 + galleryImages.length) % galleryImages.length;
+      renderDarazShowcase();
+      startSliderTimer();
+    }
+
+    function jumpToSlide(idx) {
+      currentSlideIndex = idx;
+      renderDarazShowcase();
+      startSliderTimer();
+    }
+
+    function setSliderSpeed(ms) {
+      sliderSpeedMs = ms;
+      [1000, 1500, 3000].forEach(s => {
+        const btn = document.getElementById(`speed-${s}`);
+        if (btn) {
+          btn.className = s === ms
+            ? 'px-2 py-1 rounded bg-emerald-600 text-white cursor-pointer'
+            : 'px-2 py-1 rounded text-slate-400 hover:text-white cursor-pointer';
+        }
+      });
+      if (!isSliderPlaying) {
+        isSliderPlaying = true;
+        updatePlayBtnIcon();
+      }
+      renderDarazShowcase();
+      startSliderTimer();
+    }
+
+    function toggleSliderPlay() {
+      isSliderPlaying = !isSliderPlaying;
+      updatePlayBtnIcon();
+      renderDarazShowcase();
+      startSliderTimer();
+    }
+
+    function updatePlayBtnIcon() {
+      const btn = document.getElementById('slider-play-btn');
+      if (btn) {
+        btn.innerHTML = isSliderPlaying ? '<i class="fa-solid fa-pause"></i>' : '<i class="fa-solid fa-play"></i>';
+      }
     }
 
     // -------------------------------------------------------------
@@ -916,9 +1350,9 @@
       const container = document.getElementById('notes-categories');
       const cats = ['All', ...new Set(allNotes.map(n => n.category))];
       container.innerHTML = cats.map(cat => `
-        <button onclick="filterNotesCategory('${cat}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+        <button onclick="filterNotesCategory('${escapeHtml(cat)}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
           selectedCategory === cat ? 'bg-emerald-700 text-white shadow-xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-        }">${cat}</button>
+        }">${escapeHtml(cat)}</button>
       `).join('');
     }
 
@@ -938,8 +1372,8 @@
 
       const filtered = allNotes.filter(n => {
         const matchesCategory = selectedCategory === 'All' || n.category === selectedCategory;
-        const matchesSearch = !searchVal || 
-          n.title.toLowerCase().includes(searchVal) || 
+        const matchesSearch = !searchVal ||
+          n.title.toLowerCase().includes(searchVal) ||
           n.topic.toLowerCase().includes(searchVal) ||
           n.overview.toLowerCase().includes(searchVal);
         return matchesCategory && matchesSearch;
@@ -961,35 +1395,34 @@
           <div class="p-6">
             <div class="flex items-center justify-between gap-2 mb-3">
               <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                ${note.category}
+                ${escapeHtml(note.category)}
               </span>
               <span class="text-xs text-slate-400 font-medium">
-                ${note.readTime}
+                ${escapeHtml(note.readTime)}
               </span>
             </div>
 
             <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors line-clamp-2">
-              ${note.title}
+              ${escapeHtml(note.title)}
             </h3>
 
             <p class="text-xs font-semibold text-emerald-600 mt-1">
-              ${note.topic}
+              ${escapeHtml(note.topic)}
             </p>
 
             <p class="text-xs text-slate-600 mt-3 line-clamp-3 leading-relaxed">
-              ${note.overview}
+              ${escapeHtml(note.overview)}
             </p>
 
             <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
               ${note.sections.slice(0, 2).map(s => `
                 <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium truncate max-w-[200px]">
-                  ${s.heading.replace(/^\\d+\\.\\s*/, '')}
+                  ${escapeHtml(s.heading.replace(/^\d+\.\s*/, ''))}
                 </span>
               `).join('')}
             </div>
           </div>
 
-          <!-- Bottom Action: Strictly Web Reading, Zero Download -->
           <div class="px-6 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
             <div class="flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
               <i class="fa-solid fa-lock text-slate-400 text-xs"></i>
@@ -1007,14 +1440,12 @@
     // -------------------------------------------------------------
     // DEDICATED ONLINE NOTES READER MODAL
     // -------------------------------------------------------------
-    let currentReaderNote = null;
     let readerFontSize = 'base';
     let readerTheme = 'light';
 
     function openNotesReader(noteId) {
       const note = allNotes.find(n => n.id === noteId);
       if (!note) return;
-      currentReaderNote = note;
 
       document.getElementById('reader-category-badge').innerText = note.category;
       document.getElementById('reader-time-badge').innerText = note.readTime;
@@ -1028,14 +1459,14 @@
             </span>
             <span class="text-xs text-slate-400">Online View Protected</span>
           </div>
-          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight font-display mb-2 text-slate-900">
-            ${note.title}
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight font-display mb-2">
+            ${escapeHtml(note.title)}
           </h1>
           <p class="text-sm font-semibold text-emerald-600">
-            Topic: ${note.topic}
+            Topic: ${escapeHtml(note.topic)}
           </p>
           <p class="mt-3 text-sm italic opacity-85 leading-relaxed bg-black/5 p-3 rounded-xl">
-            &ldquo;${note.overview}&rdquo;
+            &ldquo;${escapeHtml(note.overview)}&rdquo;
           </p>
         </div>
 
@@ -1043,15 +1474,15 @@
           ${note.sections.map(sec => `
             <section class="space-y-3">
               <h2 class="text-xl font-bold font-display text-emerald-700 flex items-center gap-2">
-                ${sec.heading}
+                ${escapeHtml(sec.heading)}
               </h2>
-              <p class="leading-relaxed opacity-90">${sec.body}</p>
+              <p class="leading-relaxed opacity-90">${escapeHtml(sec.body)}</p>
               ${sec.points && sec.points.length > 0 ? `
                 <div class="mt-3 pl-4 border-l-2 border-emerald-500 space-y-2">
                   ${sec.points.map(pt => `
                     <div class="flex items-start gap-2">
                       <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
-                      <span class="opacity-90">${pt}</span>
+                      <span class="opacity-90">${escapeHtml(pt)}</span>
                     </div>
                   `).join('')}
                 </div>
@@ -1062,15 +1493,15 @@
 
         ${note.keyTakeaways && note.keyTakeaways.length > 0 ? `
           <div class="mt-8 p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 space-y-3">
-            <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+            <div class="flex items-center gap-2 text-emerald-700 font-bold text-sm">
               <i class="fa-solid fa-bookmark text-emerald-600"></i>
-              <span>Summary & Key Scientific Takeaways (Kamran Akbar, P.H.D Scholar)</span>
+              <span>Summary &amp; Key Takeaways</span>
             </div>
             <ul class="space-y-2">
               ${note.keyTakeaways.map(tk => `
                 <li class="flex items-start gap-2 text-xs sm:text-sm">
                   <i class="fa-solid fa-check text-emerald-600 mt-1 shrink-0"></i>
-                  <span>${tk}</span>
+                  <span>${escapeHtml(tk)}</span>
                 </li>
               `).join('')}
             </ul>
@@ -1078,7 +1509,7 @@
         ` : ''}
 
         <div class="mt-10 pt-6 border-t border-slate-200 text-center space-y-1">
-          <p class="text-xs font-bold text-slate-500">Pariran Academy © All Rights Reserved. Prepared by Kamran Akbar (P.H.D Scholar).</p>
+          <p class="text-xs font-bold text-slate-500">Pariran Academy &copy; All Rights Reserved.</p>
           <p class="text-[11px] text-amber-600 font-semibold">Strictly for direct online browser learning. No PDF download option available.</p>
         </div>
       `;
@@ -1107,7 +1538,6 @@
       const toolbar = document.getElementById('reader-toolbar');
       const footer = document.getElementById('reader-footer');
 
-      // Theme
       if (readerTheme === 'sepia') {
         card.className = "w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl shadow-2xl border border-[#ebdccb] bg-[#fcf8f2] text-[#433422] overflow-hidden";
         toolbar.className = "px-4 sm:px-6 py-3.5 border-b border-[#ebdccb] bg-[#f5ecdf] flex flex-wrap items-center justify-between gap-3";
@@ -1122,7 +1552,6 @@
         footer.className = "px-6 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between";
       }
 
-      // Font size
       body.className = `p-6 sm:p-10 overflow-y-auto space-y-8 select-text leading-relaxed ${
         readerFontSize === 'sm' ? 'text-sm' : readerFontSize === 'lg' ? 'text-lg' : 'text-base'
       }`;
@@ -1138,7 +1567,6 @@
     function renderTestSystem() {
       const container = document.getElementById('test-system-container');
 
-      // STATE 1: Test Catalog (when no active test)
       if (!testSession) {
         container.innerHTML = `
           <div class="text-center max-w-3xl mx-auto mb-12">
@@ -1147,7 +1575,7 @@
               <span>INTERACTIVE TIMED ASSESSMENT MODULE</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
-              BS Level Biology Timed Online Tests
+              PHD Biology Timed Online Tests
             </h2>
             <p class="mt-2 text-sm text-slate-600 leading-relaxed">
               Test your conceptual clarity under authentic exam conditions. Features strict countdown timing, automatic submission when time elapses, instant dynamic marks calculation, and thorough explanations.
@@ -1160,7 +1588,7 @@
                 <div>
                   <div class="flex items-center justify-between gap-2 mb-3">
                     <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                      ${test.category}
+                      ${escapeHtml(test.category)}
                     </span>
                     <div class="flex items-center gap-1.5 text-xs text-slate-500 font-semibold bg-slate-100 px-2.5 py-1 rounded-lg">
                       <i class="fa-regular fa-clock"></i>
@@ -1169,11 +1597,11 @@
                   </div>
 
                   <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                    ${test.title}
+                    ${escapeHtml(test.title)}
                   </h3>
 
                   <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                    ${test.description}
+                    ${escapeHtml(test.description)}
                   </p>
 
                   <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-medium">
@@ -1195,7 +1623,6 @@
         return;
       }
 
-      // STATE 2: Active Test In Progress
       if (!testSession.isCompleted) {
         const qIndex = testSession.currentQuestionIndex;
         const q = currentTest.questions[qIndex];
@@ -1209,7 +1636,6 @@
 
         container.innerHTML = `
           <div class="space-y-6">
-            <!-- Header Bar -->
             <div class="bg-white rounded-2xl border border-slate-200 shadow-md p-4 sm:p-5 sticky top-20 z-30">
               <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div>
@@ -1218,7 +1644,7 @@
                       LIVE EXAM
                     </span>
                     <h3 class="text-sm sm:text-base font-bold text-slate-900 truncate max-w-md">
-                      ${currentTest.title}
+                      ${escapeHtml(currentTest.title)}
                     </h3>
                   </div>
                   <p class="text-xs text-slate-500 mt-0.5">
@@ -1226,7 +1652,6 @@
                   </p>
                 </div>
 
-                <!-- Timer & Submit -->
                 <div class="flex items-center gap-4">
                   <div class="flex items-center gap-2 px-4 py-2 rounded-xl font-mono text-base font-bold shadow-xs border transition-all ${
                     isLowTime ? 'bg-red-50 text-red-600 border-red-300 animate-pulse' : 'bg-slate-900 text-emerald-400 border-slate-800'
@@ -1241,16 +1666,12 @@
                 </div>
               </div>
 
-              <!-- Progress Bar -->
               <div class="w-full bg-slate-100 h-2 rounded-full mt-4 overflow-hidden">
                 <div class="bg-emerald-600 h-2 rounded-full transition-all duration-300" style="width: ${(answeredCount / totalQ) * 100}%"></div>
               </div>
             </div>
 
-            <!-- Question and Navigation Palette -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              
-              <!-- Question Card -->
               <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col justify-between">
                 <div>
                   <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-4 mb-6">
@@ -1266,7 +1687,7 @@
                   </div>
 
                   <h4 class="text-base sm:text-lg font-bold text-slate-900 leading-relaxed mb-6 font-display">
-                    ${q.question}
+                    ${escapeHtml(q.question)}
                   </h4>
 
                   <div class="space-y-3">
@@ -1283,7 +1704,7 @@
                             ${letters[oIdx]}
                           </div>
                           <span class="text-sm font-medium ${isSelected ? 'text-emerald-950 font-bold' : 'text-slate-700'}">
-                            ${opt}
+                            ${escapeHtml(opt)}
                           </span>
                         </div>
                       `;
@@ -1299,9 +1720,8 @@
                   ` : ''}
                 </div>
 
-                <!-- Bottom Question Navigation Buttons -->
                 <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-3">
-                  <button ${qIndex === 0 ? 'disabled' : ''} onclick="goToQuestion(${qIndex - 1})" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50">
+                  <button ${qIndex === 0 ? 'disabled' : ''} onclick="goToQuestion(${qIndex - 1})" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 cursor-pointer">
                     <i class="fa-solid fa-chevron-left"></i> <span>Previous</span>
                   </button>
 
@@ -1315,13 +1735,12 @@
                     </button>
                   ` : `
                     <button onclick="confirmSubmitTest()" class="flex items-center gap-1.5 px-6 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold cursor-pointer shadow-md">
-                      <span>Finish & Submit</span> <i class="fa-solid fa-check"></i>
+                      <span>Finish &amp; Submit</span> <i class="fa-solid fa-check"></i>
                     </button>
                   `}
                 </div>
               </div>
 
-              <!-- Question Palette Sidebar -->
               <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
                 <div>
                   <h4 class="text-sm font-bold text-slate-900 mb-1">Question Palette</h4>
@@ -1358,19 +1777,17 @@
                 </div>
 
                 <div class="mt-8 pt-4 border-t border-slate-100 text-center">
-                  <button onclick="quitTest()" class="text-xs text-slate-400 hover:text-red-500 transition-colors">
+                  <button onclick="quitTest()" class="text-xs text-slate-400 hover:text-red-500 transition-colors cursor-pointer">
                     Quit Assessment
                   </button>
                 </div>
               </div>
-
             </div>
           </div>
         `;
         return;
       }
 
-      // STATE 3: Test Completed (Score Report & Explanations)
       const score = testSession.score;
       container.innerHTML = `
         <div class="space-y-8 max-w-4xl mx-auto">
@@ -1383,7 +1800,6 @@
             </div>
           ` : ''}
 
-          <!-- Score Card Box -->
           <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-10 text-center">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold mb-4 border border-emerald-200">
               <i class="fa-solid fa-award text-emerald-600"></i>
@@ -1391,7 +1807,7 @@
             </div>
 
             <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">
-              ${currentTest.title}
+              ${escapeHtml(currentTest.title)}
             </h3>
             <p class="text-xs text-slate-500 mt-1">
               Completed at ${score.submittedAt} • Pariran Academy Evaluation
@@ -1414,7 +1830,6 @@
               </div>
             </div>
 
-            <!-- Breakdown -->
             <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-lg mx-auto py-4 border-t border-b border-slate-100">
               <div class="p-3 bg-emerald-50 rounded-xl text-emerald-800">
                 <div class="text-2xl font-bold font-display">${score.correctCount}</div>
@@ -1440,13 +1855,12 @@
             </div>
           </div>
 
-          <!-- Comprehensive Explanations List -->
           <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6">
             <div class="flex items-center justify-between border-b pb-4">
               <h4 class="text-lg font-bold text-slate-900 font-display">
-                Comprehensive Question Analysis & Explanations
+                Comprehensive Question Analysis &amp; Explanations
               </h4>
-              <span class="text-xs text-slate-500 font-medium">By Kamran Akbar (P.H.D Scholar)</span>
+              <span class="text-xs text-slate-500 font-medium">Pariran Academy</span>
             </div>
 
             <div class="space-y-6">
@@ -1479,7 +1893,7 @@
                       </div>
                     </div>
 
-                    <p class="text-sm font-bold text-slate-900 mb-4">${q.question}</p>
+                    <p class="text-sm font-bold text-slate-900 mb-4">${escapeHtml(q.question)}</p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
                       ${q.options.map((opt, oIdx) => {
@@ -1492,7 +1906,7 @@
                         return `
                           <div class="p-2.5 rounded-xl border text-xs flex items-center gap-2 ${sty}">
                             <span class="w-5 h-5 rounded-md flex items-center justify-center font-bold text-[10px] bg-slate-100 shrink-0">${letters[oIdx]}</span>
-                            <span>${opt}</span>
+                            <span>${escapeHtml(opt)}</span>
                             ${isOptCorrect ? '<i class="fa-solid fa-check text-emerald-600 ml-auto"></i>' : ''}
                           </div>
                         `;
@@ -1504,7 +1918,7 @@
                         <i class="fa-solid fa-lightbulb text-amber-500"></i>
                         <span>Scientific Explanation:</span>
                       </div>
-                      <p class="leading-relaxed">${q.explanation}</p>
+                      <p class="leading-relaxed">${escapeHtml(q.explanation)}</p>
                     </div>
                   </div>
                 `;
@@ -1517,7 +1931,10 @@
 
     function startTest(testId) {
       const test = allTests.find(t => t.id === testId);
-      if (!test) return;
+      if (!test || test.questions.length === 0) {
+        alert('This test has no questions yet. Please add questions via Admin Portal.');
+        return;
+      }
 
       currentTest = test;
       testSession = {
@@ -1539,13 +1956,8 @@
           clearInterval(timerInterval);
           return;
         }
-
         testSession.remainingSeconds -= 1;
-
-        if (testSession.remainingSeconds === 60) {
-          playAudioTone('warning');
-        }
-
+        if (testSession.remainingSeconds === 60) playAudioTone('warning');
         if (testSession.remainingSeconds <= 0) {
           clearInterval(timerInterval);
           testSession.remainingSeconds = 0;
@@ -1553,7 +1965,6 @@
           submitAssessment();
           return;
         }
-
         renderTestSystem();
       }, 1000);
 
@@ -1576,11 +1987,8 @@
     function toggleFlagQuestion(qIndex) {
       if (!testSession || testSession.isCompleted) return;
       const idx = testSession.flaggedQuestions.indexOf(qIndex);
-      if (idx > -1) {
-        testSession.flaggedQuestions.splice(idx, 1);
-      } else {
-        testSession.flaggedQuestions.push(qIndex);
-      }
+      if (idx > -1) testSession.flaggedQuestions.splice(idx, 1);
+      else testSession.flaggedQuestions.push(qIndex);
       renderTestSystem();
     }
 
@@ -1594,9 +2002,7 @@
       const answered = Object.keys(testSession.userAnswers).length;
       const total = currentTest.questions.length;
       if (answered < total) {
-        if (!confirm(`You have only answered ${answered} of ${total} questions. Are you sure you want to finish and submit?`)) {
-          return;
-        }
+        if (!confirm(`You have only answered ${answered} of ${total} questions. Are you sure you want to finish and submit?`)) return;
       } else {
         if (!confirm('Are you ready to submit your assessment?')) return;
       }
@@ -1606,9 +2012,7 @@
     function submitAssessment() {
       if (timerInterval) clearInterval(timerInterval);
       const questions = currentTest.questions;
-      let correct = 0;
-      let incorrect = 0;
-      let unattempted = 0;
+      let correct = 0, incorrect = 0, unattempted = 0;
 
       questions.forEach((q, idx) => {
         const userChoice = testSession.userAnswers[idx];
@@ -1650,18 +2054,28 @@
     }
 
     // -------------------------------------------------------------
-    // SECURE ADMIN PANEL (TEST & NOTES UPLOAD)
+    // SECURE ADMIN PANEL (PROFILE, GALLERY, TESTS, NOTES, SECURITY)
     // -------------------------------------------------------------
     let isAdminLoggedIn = false;
-    let currentAdminTab = 'uploadTest';
+    let currentAdminTab = 'profile';
+    let pendingProfilePhotoBase64 = null;
 
     function getAdminPassword() {
-      return localStorage.getItem('pariran_admin_pwd') || 'admin123';
+      try {
+        return localStorage.getItem('pariran_admin_pwd') || 'admin123';
+      } catch (e) {
+        return 'admin123';
+      }
     }
 
-    function openAdminModal() {
+    function openAdminModal(initialTab) {
+      if (initialTab) currentAdminTab = initialTab;
       document.getElementById('admin-modal').classList.remove('hidden');
       renderAdminModalBody();
+      setTimeout(() => {
+        const inp = document.getElementById('admin-pwd-input');
+        if (inp) inp.focus();
+      }, 60);
     }
 
     function closeAdminModal() {
@@ -1674,16 +2088,48 @@
       renderAdminModalBody();
     }
 
+    function toggleAdminPwdVisibility() {
+      const inp = document.getElementById('admin-pwd-input');
+      const icon = document.getElementById('admin-pwd-eye');
+      if (!inp || !icon) return;
+      if (inp.type === 'password') {
+        inp.type = 'text';
+        icon.className = 'fa-solid fa-eye-slash text-sm';
+      } else {
+        inp.type = 'password';
+        icon.className = 'fa-solid fa-eye text-sm';
+      }
+    }
+
+    function handleResetDefaultAdminPassword() {
+      try {
+        localStorage.removeItem('pariran_admin_pwd');
+      } catch (e) {}
+      const inp = document.getElementById('admin-pwd-input');
+      const errEl = document.getElementById('admin-auth-error');
+      const resetMsg = document.getElementById('admin-reset-msg');
+      if (inp) inp.value = 'admin123';
+      if (errEl) errEl.classList.add('hidden');
+      if (resetMsg) {
+        resetMsg.innerText = 'Password reset to admin123! Now click "Access Admin Portal".';
+        resetMsg.classList.remove('hidden');
+      }
+    }
+
     function handleAdminLoginSubmit(e) {
       e.preventDefault();
-      const val = document.getElementById('admin-pwd-input').value;
-      if (val === getAdminPassword()) {
+      const rawVal = document.getElementById('admin-pwd-input').value || '';
+      const val = rawVal.trim();
+      const storedPwd = getAdminPassword();
+      const isMatch = (val === storedPwd) || (storedPwd === 'admin123' && val.toLowerCase() === 'admin123');
+
+      if (isMatch) {
         isAdminLoggedIn = true;
         document.getElementById('admin-logout-btn').classList.remove('hidden');
         renderAdminModalBody();
       } else {
         const errEl = document.getElementById('admin-auth-error');
-        errEl.innerText = 'Invalid password. (Default is admin123)';
+        errEl.innerText = 'Invalid password. (Default is admin123 — if you changed it earlier, click Reset Password below)';
         errEl.classList.remove('hidden');
       }
     }
@@ -1696,7 +2142,6 @@
     function renderAdminModalBody() {
       const container = document.getElementById('admin-modal-body');
 
-      // STATE 1: Password Prompt
       if (!isAdminLoggedIn) {
         container.innerHTML = `
           <div class="p-8 sm:p-12 text-center max-w-md mx-auto my-auto space-y-6">
@@ -1705,50 +2150,68 @@
             </div>
             <div>
               <h4 class="text-xl font-bold text-slate-900 font-display">Administrator Authentication</h4>
-              <p class="text-xs text-slate-500 mt-1">Enter your secure password to create, upload, and edit tests & notes.</p>
+              <p class="text-xs text-slate-500 mt-1">Sign in to manage Profile &amp; Taleem, Student Gallery Photos, Timed Tests, and Online Notes.</p>
             </div>
             <form onsubmit="handleAdminLoginSubmit(event)" class="space-y-4">
-              <input id="admin-pwd-input" type="password" required placeholder="Enter password..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-center font-mono focus:ring-2 focus:ring-emerald-500">
+              <div class="relative">
+                <input id="admin-pwd-input" type="password" autocomplete="off" autocapitalize="none" required placeholder="Enter password (admin123)..." class="w-full px-4 py-3 pr-11 rounded-xl border border-slate-300 text-sm text-center font-mono focus:ring-2 focus:ring-emerald-500">
+                <button type="button" onclick="toggleAdminPwdVisibility()" aria-label="Show or hide password" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1 cursor-pointer">
+                  <i id="admin-pwd-eye" class="fa-solid fa-eye text-sm"></i>
+                </button>
+              </div>
               <p id="admin-auth-error" class="hidden text-xs text-red-600 font-medium"></p>
+              <p id="admin-reset-msg" class="hidden text-xs text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 rounded-lg py-2 px-3"></p>
               <button type="submit" class="w-full py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-md cursor-pointer transition-all">
                 Access Admin Portal
               </button>
             </form>
-            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs">
-              <strong>Quick Hint:</strong> Default password is <code class="bg-emerald-200 px-1 rounded font-bold font-mono">admin123</code>. You can change this in the Security tab once logged in.
+            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs space-y-2">
+              <div>
+                <strong>Default Password:</strong> <code class="bg-emerald-200 px-1.5 py-0.5 rounded font-bold font-mono">admin123</code>
+              </div>
+              <button type="button" onclick="handleResetDefaultAdminPassword()" class="text-[11px] font-bold text-emerald-700 hover:text-emerald-900 underline cursor-pointer">
+                Forgot / Not opening? Reset Password to admin123
+              </button>
             </div>
           </div>
         `;
         return;
       }
 
-      // STATE 2: Logged In Admin Tabs
       container.innerHTML = `
-        <!-- Tab Bar -->
         <div class="px-6 border-b border-slate-200 bg-slate-50 flex items-center gap-2 overflow-x-auto">
-          <button onclick="setAdminTab('uploadTest')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
-            currentAdminTab === 'uploadTest' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+          <button onclick="setAdminTab('profile')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'profile' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800'
           }">
-            <i class="fa-solid fa-stopwatch"></i> <span>Upload & Add Tests</span>
+            <i class="fa-solid fa-user-pen"></i> <span>Profile &amp; Taleem</span>
+          </button>
+          <button onclick="setAdminTab('gallery')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'gallery' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800'
+          }">
+            <i class="fa-solid fa-images"></i> <span>Student Gallery (${galleryImages.length})</span>
+          </button>
+          <button onclick="setAdminTab('uploadTest')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            currentAdminTab === 'uploadTest' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800'
+          }">
+            <i class="fa-solid fa-stopwatch"></i> <span>Tests &amp; MCQs</span>
           </button>
           <button onclick="setAdminTab('uploadNotes')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
-            currentAdminTab === 'uploadNotes' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+            currentAdminTab === 'uploadNotes' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800'
           }">
-            <i class="fa-solid fa-book-open"></i> <span>Upload Online Notes</span>
+            <i class="fa-solid fa-book-open"></i> <span>Upload Notes</span>
           </button>
           <button onclick="setAdminTab('manageContent')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
-            currentAdminTab === 'manageContent' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+            currentAdminTab === 'manageContent' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800'
           }">
             <i class="fa-solid fa-layer-group"></i> <span>Manage Library</span>
           </button>
           <button onclick="setAdminTab('security')" class="py-3 px-3.5 border-b-2 text-xs font-bold whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
-            currentAdminTab === 'security' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500'
+            currentAdminTab === 'security' ? 'border-emerald-600 text-emerald-800 bg-white rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800'
           }">
-            <i class="fa-solid fa-key"></i> <span>Change Password</span>
+            <i class="fa-solid fa-key"></i> <span>Password</span>
           </button>
         </div>
 
-        <!-- Content Area -->
         <div class="flex-1 p-6 overflow-y-auto space-y-6">
           ${renderAdminTabContent()}
         </div>
@@ -1756,10 +2219,191 @@
     }
 
     function renderAdminTabContent() {
+      const p = profileData;
+
+      // TAB: PROFILE, PHOTO, QUALIFICATION & TALEEM
+      if (currentAdminTab === 'profile') {
+        const previewPhoto = pendingProfilePhotoBase64 !== null ? pendingProfilePhotoBase64 : p.photo;
+        return `
+          <div class="space-y-6">
+            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-start gap-3">
+              <i class="fa-solid fa-circle-info text-emerald-600 text-base mt-0.5"></i>
+              <div>
+                <strong>Personal Information Control:</strong> Write your own Qualification, Taleem (Education), Experience, Bio, Quote, and upload your own Photo right here. Leave any field empty if you don't want it shown on the homepage.
+              </div>
+            </div>
+
+            <form onsubmit="handleSaveProfile(event)" class="space-y-6">
+              <!-- Photo Upload Row -->
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center gap-5">
+                <div class="w-24 h-24 rounded-full bg-slate-900 border-2 border-emerald-500 overflow-hidden flex items-center justify-center shrink-0">
+                  ${previewPhoto
+                    ? `<img id="admin-profile-preview" src="${previewPhoto}" alt="Profile Preview" class="w-full h-full object-cover">`
+                    : `<i id="admin-profile-preview-icon" class="fa-solid fa-user-tie text-4xl text-emerald-400"></i>`
+                  }
+                </div>
+                <div class="flex-1 space-y-3 w-full">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-800 mb-1">Upload Your Own Picture (Device File)</label>
+                    <input id="prof-photo-file" type="file" accept="image/*" onchange="handleProfilePhotoFileChange(event)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-emerald-700 file:text-white hover:file:bg-emerald-800 cursor-pointer">
+                  </div>
+                  <div class="flex flex-col sm:flex-row gap-2 items-center">
+                    <input id="prof-photo-url" type="text" placeholder="Or paste Image URL..." value="${p.photo && !p.photo.startsWith('data:') ? escapeHtml(p.photo) : ''}" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs bg-white">
+                    <button type="button" onclick="handleRemoveProfilePhoto()" class="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-xs font-bold whitespace-nowrap cursor-pointer">
+                      Remove Photo
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Qualification, Taleem & Bio Fields -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+                  <input id="prof-name" type="text" value="${escapeHtml(p.name)}" placeholder="e.g. Kamran Akbar" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Qualification / Title</label>
+                  <input id="prof-qual" type="text" value="${escapeHtml(p.qualification)}" placeholder="e.g. P.H.D Scholar / M.Phil Biological Sciences" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Education / Taleem (Degrees &amp; Institutions)</label>
+                  <input id="prof-edu" type="text" value="${escapeHtml(p.education)}" placeholder="e.g. M.Phil, PHD Research..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Experience / Specialization</label>
+                  <input id="prof-exp" type="text" value="${escapeHtml(p.experience)}" placeholder="e.g. Cell Biology, Molecular Genetics" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">About / Biography (Apni Baatein)</label>
+                <textarea id="prof-bio" rows="3" placeholder="Write about yourself, your teaching vision, and achievements..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">${escapeHtml(p.bio)}</textarea>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Inspirational Message / Quote for Students</label>
+                <input id="prof-quote" type="text" value="${escapeHtml(p.quote)}" placeholder="e.g. Knowledge grows through curiosity and discipline." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+              </div>
+
+              <!-- Optional Stats -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">Stat 1 Value</label>
+                  <input id="prof-s1v" type="text" value="${escapeHtml(p.stat1Value)}" placeholder="e.g. 5,000+" class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">Stat 1 Label</label>
+                  <input id="prof-s1l" type="text" value="${escapeHtml(p.stat1Label)}" placeholder="e.g. Students" class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">Stat 2 Value</label>
+                  <input id="prof-s2v" type="text" value="${escapeHtml(p.stat2Value)}" placeholder="e.g. 10+ Yrs" class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">Stat 2 Label</label>
+                  <input id="prof-s2l" type="text" value="${escapeHtml(p.stat2Label)}" placeholder="e.g. Teaching" class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-slate-200">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">YouTube URL</label>
+                  <input id="prof-yt-url" type="text" value="${escapeHtml(p.youtubeUrl)}" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                  <input id="prof-yt-handle" type="text" value="${escapeHtml(p.youtubeHandle)}" placeholder="@Handle" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs mt-1.5">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">TikTok URL</label>
+                  <input id="prof-tt-url" type="text" value="${escapeHtml(p.tiktokUrl)}" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                  <input id="prof-tt-handle" type="text" value="${escapeHtml(p.tiktokHandle)}" placeholder="@Handle" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs mt-1.5">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Facebook URL &amp; Title</label>
+                  <input id="prof-fb-url" type="text" value="${escapeHtml(p.facebookUrl)}" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs">
+                  <input id="prof-fb-label" type="text" value="${escapeHtml(p.facebookLabel)}" placeholder="Group Name" class="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs mt-1.5">
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-2">
+                <button type="button" onclick="handleClearProfileDetails()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold cursor-pointer">
+                  Clear Bio &amp; Qualification
+                </button>
+                <button type="submit" class="px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl shadow-md cursor-pointer">
+                  <i class="fa-solid fa-floppy-disk mr-1.5"></i> Save Profile Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        `;
+      }
+
+      // TAB: STUDENT GALLERY & PHOTO UPLOADER
+      if (currentAdminTab === 'gallery') {
+        return `
+          <div class="space-y-6">
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <h4 class="text-sm font-bold text-slate-900">
+                  <i class="fa-solid fa-cloud-arrow-up text-emerald-600 mr-1.5"></i> Add Picture to Student Showcase Slider
+                </h4>
+                <button onclick="handleResetGallery()" class="text-xs text-emerald-700 hover:underline font-semibold cursor-pointer">
+                  Restore 20 Default Photos
+                </button>
+              </div>
+
+              <form onsubmit="handleAddGalleryPhoto(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Upload Image from Device</label>
+                  <input id="gal-file" type="file" accept="image/*" class="block w-full text-xs text-slate-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-slate-900 file:text-white cursor-pointer">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Or Paste Image URL</label>
+                  <input id="gal-url" type="text" placeholder="https://..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Photo Caption / Title *</label>
+                  <input id="gal-title" type="text" required placeholder="e.g. PHD Biology Lab Session" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Badge Tag</label>
+                  <input id="gal-tag" type="text" placeholder="e.g. Lab Work, Toppers, Campus" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                </div>
+                <div class="md:col-span-2 text-right">
+                  <button type="submit" class="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl cursor-pointer">
+                    Add Photo to Slider
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div>
+              <h4 class="text-sm font-bold text-slate-900 mb-3">Active Showcase Pictures (${galleryImages.length})</h4>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                ${galleryImages.map((img, i) => `
+                  <div class="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-xs group relative">
+                    <div class="h-24 bg-slate-100 relative">
+                      <img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.title)}" class="w-full h-full object-cover">
+                      <button onclick="handleDeleteGalleryPhoto('${img.id}')" class="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-red-600 text-white text-[10px] flex items-center justify-center opacity-90 hover:opacity-100 cursor-pointer shadow" title="Remove photo">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                      <span class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-slate-900/80 text-white text-[9px] font-mono">#${i + 1}</span>
+                    </div>
+                    <div class="p-2">
+                      <div class="text-[11px] font-bold text-slate-800 truncate">${escapeHtml(img.title)}</div>
+                      <div class="text-[10px] text-emerald-600 font-semibold truncate">${escapeHtml(img.tag)}</div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
       if (currentAdminTab === 'uploadTest') {
         return `
           <div class="space-y-8">
-            <!-- Step 1: Create Assessment Container -->
             <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-4">
               <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
                 <i class="fa-solid fa-plus-circle text-emerald-600"></i>
@@ -1768,11 +2412,11 @@
               <form onsubmit="handleCreateTest(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Test Title *</label>
-                  <input id="new-test-title" type="text" required placeholder="e.g. Molecular Genetics & Transcription Test" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                  <input id="new-test-title" type="text" required placeholder="e.g. Molecular Genetics &amp; Transcription Test" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Subject / Category</label>
-                  <input id="new-test-category" type="text" placeholder="e.g. Genetics, BS Level Biology" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
+                  <input id="new-test-category" type="text" placeholder="e.g. Genetics, PHD Biology" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs bg-white">
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Countdown Time Limit (Minutes)</label>
@@ -1790,17 +2434,16 @@
               </form>
             </div>
 
-            <!-- Step 2: Add MCQs -->
             <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-4 shadow-xs">
-              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-2">
                 <div class="flex items-center gap-2">
                   <i class="fa-solid fa-circle-question text-emerald-600"></i>
                   <h4 class="text-sm font-bold text-slate-900">Step 2: Add MCQs to Test</h4>
                 </div>
                 <div class="flex items-center gap-2 text-xs font-semibold">
                   <span class="text-slate-500">Target Test:</span>
-                  <select id="target-test-select" class="px-2.5 py-1 rounded-lg border border-slate-300 bg-slate-50">
-                    ${allTests.map(t => `<option value="${t.id}">${t.title} (${t.questions.length} Qs)</option>`).join('')}
+                  <select id="target-test-select" class="px-2.5 py-1 rounded-lg border border-slate-300 bg-slate-50 max-w-xs">
+                    ${allTests.map(t => `<option value="${t.id}">${escapeHtml(t.title)} (${t.questions.length} Qs)</option>`).join('')}
                   </select>
                 </div>
               </div>
@@ -1843,7 +2486,7 @@
                 </div>
 
                 <div>
-                  <label class="block text-xs font-semibold text-slate-700 mb-1">Scientific Explanation (Shown to students in review mode)</label>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Scientific Explanation</label>
                   <input id="q-exp" type="text" placeholder="Detailed explanation for learning..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
                 </div>
 
@@ -1855,7 +2498,6 @@
               </form>
             </div>
 
-            <!-- Bulk Importer -->
             <div class="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
@@ -1867,7 +2509,7 @@
               <p class="text-xs text-slate-500 leading-relaxed">
                 Paste questions formatted with Q:, A:, B:, C:, D:, and Correct: (A, B, C, or D).
               </p>
-              <textarea id="bulk-mcq-text" rows="4" placeholder="Q: What organelle synthesizes ATP?\\nA: Ribosome\\nB: Mitochondria\\nC: Lysosome\\nD: Vacuole\\nCorrect: B\\nExp: Through oxidative phosphorylation." class="w-full font-mono text-xs p-3 rounded-xl border border-slate-300 bg-white"></textarea>
+              <textarea id="bulk-mcq-text" rows="4" placeholder="Q: What organelle synthesizes ATP?&#10;A: Ribosome&#10;B: Mitochondria&#10;C: Lysosome&#10;D: Vacuole&#10;Correct: B&#10;Exp: Through oxidative phosphorylation." class="w-full font-mono text-xs p-3 rounded-xl border border-slate-300 bg-white"></textarea>
               <div class="text-right">
                 <button onclick="handleBulkImport()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl cursor-pointer">
                   Import Batch Questions
@@ -1890,7 +2532,7 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Note Title *</label>
-                  <input id="note-title-in" type="text" required placeholder="e.g. Calvin Cycle & Carbon Fixation" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                  <input id="note-title-in" type="text" required placeholder="e.g. Calvin Cycle &amp; Carbon Fixation" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Subject / Category</label>
@@ -1898,7 +2540,7 @@
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Sub-Topic</label>
-                  <input id="note-topic-in" type="text" placeholder="e.g. Photosynthesis (BS Level)" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+                  <input id="note-topic-in" type="text" placeholder="e.g. Photosynthesis (PHD)" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-slate-700 mb-1">Estimated Reading Time</label>
@@ -1926,7 +2568,7 @@
               </div>
 
               <div>
-                <label class="block text-xs font-semibold text-slate-700 mb-1">Author Key Takeaways (One per line)</label>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Key Takeaways (One per line)</label>
                 <textarea id="note-takeaways" rows="2" placeholder="Takeaway 1&#10;Takeaway 2" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs"></textarea>
               </div>
 
@@ -1952,10 +2594,10 @@
                 ${allTests.map(t => `
                   <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
                     <div>
-                      <div class="text-xs font-bold text-slate-900">${t.title}</div>
-                      <div class="text-[11px] text-slate-500 mt-0.5">${t.category} • ${t.questions.length} Questions • ${t.timeLimitMinutes} Mins</div>
+                      <div class="text-xs font-bold text-slate-900">${escapeHtml(t.title)}</div>
+                      <div class="text-[11px] text-slate-500 mt-0.5">${escapeHtml(t.category)} • ${t.questions.length} Questions • ${t.timeLimitMinutes} Mins</div>
                     </div>
-                    <button onclick="handleDeleteTest('${t.id}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50" title="Delete Test">
+                    <button onclick="handleDeleteTest('${t.id}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 cursor-pointer" title="Delete Test">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
                   </div>
@@ -1972,10 +2614,10 @@
                 ${allNotes.map(n => `
                   <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
                     <div>
-                      <div class="text-xs font-bold text-slate-900">${n.title}</div>
-                      <div class="text-[11px] text-slate-500 mt-0.5">${n.category} • ${n.readTime} • ${n.sections.length} Sections</div>
+                      <div class="text-xs font-bold text-slate-900">${escapeHtml(n.title)}</div>
+                      <div class="text-[11px] text-slate-500 mt-0.5">${escapeHtml(n.category)} • ${escapeHtml(n.readTime)} • ${n.sections.length} Sections</div>
                     </div>
-                    <button onclick="handleDeleteNote('${n.id}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50" title="Delete Note">
+                    <button onclick="handleDeleteNote('${n.id}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 cursor-pointer" title="Delete Note">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
                   </div>
@@ -1986,10 +2628,10 @@
             <div class="pt-4 border-t border-slate-200">
               <div class="p-4 rounded-2xl bg-slate-100 flex items-center justify-between">
                 <div>
-                  <div class="text-xs font-bold text-slate-800">Restore Factory Sample Data</div>
-                  <div class="text-[11px] text-slate-500">Resets back to Kamran Akbar's original default assessments & notes.</div>
+                  <div class="text-xs font-bold text-slate-800">Restore Default Notes &amp; Tests</div>
+                  <div class="text-[11px] text-slate-500">Resets curriculum notes and timed tests back to defaults.</div>
                 </div>
-                <button onclick="handleRestoreDefaults()" class="px-4 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl">
+                <button onclick="handleRestoreDefaults()" class="px-4 py-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl cursor-pointer">
                   Restore Defaults
                 </button>
               </div>
@@ -2028,7 +2670,152 @@
       }
     }
 
-    // Admin Handlers
+    // Profile Photo File Handler
+    async function handleProfilePhotoFileChange(e) {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      try {
+        const compressed = await compressImageFile(file, 600, 0.85);
+        pendingProfilePhotoBase64 = compressed;
+        renderAdminModalBody();
+      } catch (err) {
+        alert('Could not read image file. Please try another photo.');
+      }
+    }
+
+    function handleRemoveProfilePhoto() {
+      pendingProfilePhotoBase64 = '';
+      const urlInput = document.getElementById('prof-photo-url');
+      if (urlInput) urlInput.value = '';
+      profileData.photo = '';
+      saveProfile(profileData);
+      renderProfileEverywhere();
+      renderAdminModalBody();
+    }
+
+    function handleSaveProfile(e) {
+      e.preventDefault();
+      const urlVal = document.getElementById('prof-photo-url').value.trim();
+      let finalPhoto = profileData.photo;
+      if (pendingProfilePhotoBase64 !== null) {
+        finalPhoto = pendingProfilePhotoBase64;
+      } else if (urlVal) {
+        finalPhoto = urlVal;
+      }
+
+      profileData = {
+        name: document.getElementById('prof-name').value.trim(),
+        qualification: document.getElementById('prof-qual').value.trim(),
+        education: document.getElementById('prof-edu').value.trim(),
+        experience: document.getElementById('prof-exp').value.trim(),
+        bio: document.getElementById('prof-bio').value.trim(),
+        quote: document.getElementById('prof-quote').value.trim(),
+        photo: finalPhoto,
+        stat1Value: document.getElementById('prof-s1v').value.trim(),
+        stat1Label: document.getElementById('prof-s1l').value.trim(),
+        stat2Value: document.getElementById('prof-s2v').value.trim(),
+        stat2Label: document.getElementById('prof-s2l').value.trim(),
+        youtubeUrl: document.getElementById('prof-yt-url').value.trim() || DEFAULT_PROFILE.youtubeUrl,
+        youtubeHandle: document.getElementById('prof-yt-handle').value.trim() || DEFAULT_PROFILE.youtubeHandle,
+        tiktokUrl: document.getElementById('prof-tt-url').value.trim() || DEFAULT_PROFILE.tiktokUrl,
+        tiktokHandle: document.getElementById('prof-tt-handle').value.trim() || DEFAULT_PROFILE.tiktokHandle,
+        facebookUrl: document.getElementById('prof-fb-url').value.trim() || DEFAULT_PROFILE.facebookUrl,
+        facebookLabel: document.getElementById('prof-fb-label').value.trim() || DEFAULT_PROFILE.facebookLabel
+      };
+
+      pendingProfilePhotoBase64 = null;
+      saveProfile(profileData);
+      renderProfileEverywhere();
+      alert('Profile, Qualification, Taleem & Photo updated successfully!');
+    }
+
+    function handleClearProfileDetails() {
+      if (!confirm('Clear bio, qualification, education, experience, quote, and stats?')) return;
+      profileData.qualification = '';
+      profileData.education = '';
+      profileData.experience = '';
+      profileData.bio = '';
+      profileData.quote = '';
+      profileData.stat1Value = '';
+      profileData.stat1Label = '';
+      profileData.stat2Value = '';
+      profileData.stat2Label = '';
+      saveProfile(profileData);
+      renderProfileEverywhere();
+      renderAdminModalBody();
+    }
+
+    // Gallery Handlers
+    async function handleAddGalleryPhoto(e) {
+      e.preventDefault();
+      const file = document.getElementById('gal-file').files?.[0];
+      const urlVal = document.getElementById('gal-url').value.trim();
+      const title = document.getElementById('gal-title').value.trim();
+      const tag = document.getElementById('gal-tag').value.trim() || 'Campus Life';
+
+      let imgUrl = urlVal;
+      if (file) {
+        try {
+          imgUrl = await compressImageFile(file, 1000, 0.8);
+        } catch (err) {
+          alert('Failed to process uploaded image.');
+          return;
+        }
+      }
+
+      if (!imgUrl) {
+        alert('Please upload an image file or enter an image URL.');
+        return;
+      }
+
+      const newPhoto = {
+        id: 'img-custom-' + Date.now(),
+        url: imgUrl,
+        title,
+        tag
+      };
+
+      galleryImages.unshift(newPhoto);
+      try {
+        saveGallery(galleryImages);
+      } catch (storageErr) {
+        galleryImages.shift();
+        alert('Browser storage full! Please delete a few custom uploaded images first or use an image URL.');
+        return;
+      }
+
+      currentSlideIndex = 0;
+      renderDarazShowcase();
+      renderStudentMarquee();
+      renderAdminModalBody();
+      alert(`Photo "${title}" added to the Daraz-style Student Showcase!`);
+    }
+
+    function handleDeleteGalleryPhoto(id) {
+      if (galleryImages.length <= 1) {
+        alert('At least 1 showcase photo is required.');
+        return;
+      }
+      if (!confirm('Remove this picture from the student showcase?')) return;
+      galleryImages = galleryImages.filter(g => g.id !== id);
+      saveGallery(galleryImages);
+      if (currentSlideIndex >= galleryImages.length) currentSlideIndex = 0;
+      renderDarazShowcase();
+      renderStudentMarquee();
+      renderAdminModalBody();
+    }
+
+    function handleResetGallery() {
+      if (!confirm('Restore the 20 default student & biology lab showcase photos?')) return;
+      galleryImages = [...DEFAULT_GALLERY];
+      saveGallery(galleryImages);
+      currentSlideIndex = 0;
+      renderDarazShowcase();
+      renderStudentMarquee();
+      renderAdminModalBody();
+    }
+
+    // Test & Note Admin Handlers
     function handleCreateTest(e) {
       e.preventDefault();
       const title = document.getElementById('new-test-title').value.trim();
@@ -2068,7 +2855,7 @@
       for (let r of correctRadios) {
         if (r.checked) correct = Number(r.value);
       }
-      const exp = document.getElementById('q-exp').value.trim() || 'Authored by Kamran Akbar (P.H.D Scholar).';
+      const exp = document.getElementById('q-exp').value.trim() || 'Pariran Academy curriculum explanation.';
 
       test.questions.push({
         id: 'q-custom-' + Date.now(),
@@ -2092,27 +2879,27 @@
       const raw = document.getElementById('bulk-mcq-text').value.trim();
       if (!raw) { alert('Please enter bulk MCQ text.'); return; }
 
-      const blocks = raw.split(/\\n\\s*\\n/).filter(b => b.trim());
+      const blocks = raw.split(/\n\s*\n/).filter(b => b.trim());
       let count = 0;
 
       blocks.forEach(blk => {
-        const lines = blk.split('\\n').map(l => l.trim()).filter(Boolean);
-        let q = '', a = '', b = '', c = '', d = '', correct = 0, exp = 'Explanation by Kamran Akbar.';
+        const lines = blk.split('\n').map(l => l.trim()).filter(Boolean);
+        let q = '', a = '', b = '', c = '', d = '', correct = 0, exp = 'Pariran Academy explanation.';
 
         lines.forEach(l => {
-          if (l.match(/^Q:\\s*(.*)/i)) q = l.replace(/^Q:\\s*/i, '');
-          else if (l.match(/^A:\\s*(.*)/i)) a = l.replace(/^A:\\s*/i, '');
-          else if (l.match(/^B:\\s*(.*)/i)) b = l.replace(/^B:\\s*/i, '');
-          else if (l.match(/^C:\\s*(.*)/i)) c = l.replace(/^C:\\s*/i, '');
-          else if (l.match(/^D:\\s*(.*)/i)) d = l.replace(/^D:\\s*/i, '');
-          else if (l.match(/^Correct:\\s*(.*)/i)) {
-            const ans = l.replace(/^Correct:\\s*/i, '').trim().toUpperCase();
+          if (l.match(/^Q:\s*(.*)/i)) q = l.replace(/^Q:\s*/i, '');
+          else if (l.match(/^A:\s*(.*)/i)) a = l.replace(/^A:\s*/i, '');
+          else if (l.match(/^B:\s*(.*)/i)) b = l.replace(/^B:\s*/i, '');
+          else if (l.match(/^C:\s*(.*)/i)) c = l.replace(/^C:\s*/i, '');
+          else if (l.match(/^D:\s*(.*)/i)) d = l.replace(/^D:\s*/i, '');
+          else if (l.match(/^Correct:\s*(.*)/i)) {
+            const ans = l.replace(/^Correct:\s*/i, '').trim().toUpperCase();
             if (ans === 'B') correct = 1;
             else if (ans === 'C') correct = 2;
             else if (ans === 'D') correct = 3;
             else correct = 0;
-          } else if (l.match(/^Exp:\\s*(.*)/i)) {
-            exp = l.replace(/^Exp:\\s*/i, '');
+          } else if (l.match(/^Exp:\s*(.*)/i)) {
+            exp = l.replace(/^Exp:\s*/i, '');
           }
         });
 
@@ -2138,7 +2925,7 @@
       e.preventDefault();
       const title = document.getElementById('note-title-in').value.trim();
       const category = document.getElementById('note-cat-in').value.trim() || 'General Biology';
-      const topic = document.getElementById('note-topic-in').value.trim() || 'Curriculum (BS Level)';
+      const topic = document.getElementById('note-topic-in').value.trim() || 'Curriculum (PHD)';
       const readTime = document.getElementById('note-time-in').value.trim() || '7 min read';
       const overview = document.getElementById('note-over-in').value.trim() || 'Curriculum notes for direct browser reading on Pariran Academy.';
 
@@ -2149,7 +2936,7 @@
       const sections = [{
         heading: sec1Head,
         body: sec1Body,
-        points: sec1Pts ? sec1Pts.split('\\n').map(p => p.trim()).filter(Boolean) : []
+        points: sec1Pts ? sec1Pts.split('\n').map(p => p.trim()).filter(Boolean) : []
       }];
 
       const sec2Head = document.getElementById('note-sec2-head')?.value.trim();
@@ -2160,13 +2947,13 @@
         sections.push({
           heading: sec2Head,
           body: sec2Body,
-          points: sec2Pts ? sec2Pts.split('\\n').map(p => p.trim()).filter(Boolean) : []
+          points: sec2Pts ? sec2Pts.split('\n').map(p => p.trim()).filter(Boolean) : []
         });
       }
 
       const twRaw = document.getElementById('note-takeaways')?.value.trim();
-      const keyTakeaways = twRaw ? twRaw.split('\\n').map(t => t.trim()).filter(Boolean) : [
-        'Study concepts prepared for BS Biology by Kamran Akbar.'
+      const keyTakeaways = twRaw ? twRaw.split('\n').map(t => t.trim()).filter(Boolean) : [
+        'Curriculum summary notes for online study.'
       ];
 
       allNotes.unshift({
@@ -2207,9 +2994,9 @@
     }
 
     function handleRestoreDefaults() {
-      if (confirm('Restore factory default notes and tests? Custom uploads will be reset.')) {
-        allNotes = DEFAULT_NOTES;
-        allTests = DEFAULT_TESTS;
+      if (confirm('Restore default notes and tests? Custom uploaded tests/notes will be reset.')) {
+        allNotes = [...DEFAULT_NOTES];
+        allTests = [...DEFAULT_TESTS];
         saveNotes(allNotes);
         saveTests(allTests);
         renderNotesCategories();
@@ -2259,6 +3046,10 @@
     // -------------------------------------------------------------
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('current-year').innerText = new Date().getFullYear();
+      renderProfileEverywhere();
+      renderDarazShowcase();
+      renderStudentMarquee();
+      startSliderTimer();
       renderNotesCategories();
       renderNotesGrid();
       renderTestSystem();
